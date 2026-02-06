@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans | SafeGuard Remediation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554' },
+                        secondary: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }
+                    },
+                    fontFamily: { 'body': ['Inter', 'sans-serif'], 'heading': ['Outfit', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M50 25 L75 35 L75 55 C75 75 50 85 50 85 C50 85 25 75 25 55 L25 35 Z%22 fill=%22white%22/><circle cx=%2250%22 cy=%2250%22 r=%228%22 fill=%22%232563eb%22/></svg>">
+</head>
+
+<body
+    class="bg-primary-50 text-secondary-900 dark:bg-secondary-950 dark:text-white transition-colors duration-300 font-body">
+
+    <!-- Header -->
+    <header
+        class="fixed w-full z-50 bg-white dark:bg-secondary-950 border-b border-secondary-100 dark:border-secondary-800">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
+                    <i class="fas fa-shield-virus"></i>
+                </div>
+                <span
+                    class="text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                        class="text-primary-600">Guard</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="services.html" class="navbar-link">Services</a>
+                <a href="pricing.html" class="navbar-link text-primary-600">Pricing</a>
+                <a href="contact.html" class="navbar-link">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <!-- Theme/RTL Toggles -->
+                <button id="theme-toggle"
+                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors">
+                    <i id="theme-toggle-dark-icon" class="fas fa-moon"></i>
+                    <i id="theme-toggle-light-icon" class="fas fa-sun hidden"></i>
+                </button>
+                <button id="rtl-toggle"
+                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors text-sm font-bold">
+                    RTL
+                </button>
+
+                <a href="login.html"
+                    class="hidden sm:block text-secondary-600 dark:text-secondary-400 font-bold hover:text-primary-600 transition-colors">Login</a>
+
+                <button id="mobile-menu-button" class="lg:hidden p-2 text-secondary-600 dark:text-secondary-400">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white dark:bg-secondary-950 border-t border-secondary-100 dark:border-secondary-800 px-4 py-6 space-y-4">
+            <div class="flex items-center gap-2 mb-8 pb-4 border-b border-secondary-100 dark:border-secondary-800">
+                <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl">
+                    <i class="fas fa-shield-virus"></i>
+                </div>
+                <span
+                    class="text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                        class="text-primary-600">Guard</span></span>
+            </div>
+            <div class="flex items-center gap-2 mb-8 pb-4 border-b border-secondary-100 dark:border-secondary-800">
+                <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl">
+                    <i class="fas fa-shield-virus"></i>
+                </div>
+                <span
+                    class="text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                        class="text-primary-600">Guard</span></span>
+            </div>
+            <a href="index.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Home</a>
+            <a href="about.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> About</a>
+            <a href="services.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Services</a>
+            <a href="pricing.html" class="flex items-center gap-3 text-lg font-medium text-primary-600"><i
+                    class="fas fa-shield-virus"></i> Pricing</a>
+            <a href="contact.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Contact</a>
+            <div class="pt-4 border-t border-secondary-100 dark:border-secondary-800">
+                <a href="login.html" class="btn btn-primary w-full text-center">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-20 animate-on-scroll">
+                <h1 class="text-5xl font-heading font-bold mb-6">Simple, Transparent Pricing</h1>
+                <p class="text-secondary-600 dark:text-secondary-400 text-xl">Investment in remediation varies by
+                    project scale. We offer standardized testing and clearance packages.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-10">
+                <!-- Plan 1 -->
+                <div class="card p-10 flex flex-col animate-on-scroll">
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-secondary-500">Standard Test</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-bold font-heading">$199</span>
+                        <span class="text-secondary-500">/visit</span>
+                    </div>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-8">Perfect for home buyers and sellers
+                        needing verification.</p>
+                    <ul class="space-y-4 mb-10 flex-1">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Visual
+                            Inspection</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> 2 Air Quality
+                            Samples</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Digital Lab
+                            Report</li>
+                        <li class="flex items-center gap-3 text-secondary-400"><i class="fas fa-times"></i> Asbestos
+                            Bulk Test</li>
+                        <li class="flex items-center gap-3 text-secondary-400"><i class="fas fa-times"></i> Clearance
+                            Certificate</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary w-full">Book Now</a>
+                </div>
+
+                <!-- Plan 2 (Featured) -->
+                <div
+                    class="card p-10 flex flex-col border-primary-600 border-2 relative scale-105 z-10 animate-on-scroll shadow-2xl shadow-primary-500/10">
+                    <div
+                        class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 bg-primary-600 text-white rounded-full text-xs font-bold uppercase tracking-widest">
+                        Most Popular</div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-primary-600">Pro Remediation</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-bold font-heading">$899</span>
+                        <span class="text-secondary-500">/base</span>
+                    </div>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-8">Comprehensive cleanup for attic or
+                        basement mold issues.</p>
+                    <ul class="space-y-4 mb-10 flex-1 font-medium">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600 text-lg"></i> Full
+                            Containment Setup</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600 text-lg"></i> HEPA
+                            Air Scrubbing</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600 text-lg"></i>
+                            Anti-microbial Fogging</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600 text-lg"></i> 3 Air
+                            Lab Samples</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600 text-lg"></i>
+                            Validated Clearance</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary w-full">Get Started</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="card p-10 flex flex-col animate-on-scroll">
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-secondary-500">Commercial</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-bold font-heading">Custom</span>
+                    </div>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-8">Industrial and large scale commercial
+                        property solutions.</p>
+                    <ul class="space-y-4 mb-10 flex-1">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Phase I ESA
+                            Included</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> OSHA
+                            Compliance Support</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Multi-zone
+                            Monitoring</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Enterprise
+                            Project Portal</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Fixed Yearly
+                            Retainers</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary w-full">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-secondary-900 text-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-heading font-bold mb-16 text-center animate-on-scroll">Frequently Asked Questions
+            </h2>
+            <div class="space-y-6">
+                <div class="animate-on-scroll">
+                    <h4 class="text-xl font-bold mb-2">Can I get a discount for multiple tests?</h4>
+                    <p class="text-secondary-400">Yes, we offer special multi-unit pricing for real-estate professionals
+                        and property managers. Please contact our sales team for a custom quote.</p>
+                </div>
+                <div class="animate-on-scroll">
+                    <h4 class="text-xl font-bold mb-2">What is included in the 'Base Price'?</h4>
+                    <p class="text-secondary-400">Base pricing covers the mobilization of the crew and equipment for
+                        areas up to 200 sq. ft. Larger areas are calculated at a fixed rate per square foot.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-secondary-950 text-white pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group">
+                        <div
+                            class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <span class="text-2xl font-heading font-bold tracking-tight text-white">Safe<span
+                                class="text-primary-600">Guard</span></span>
+                    </a>
+                    <p class="text-secondary-400 mb-8 max-w-xs">Restoring safe environments through professional
+                        remediation and expert environmental consulting.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-8">Quick Links</h4>
+                    <ul class="space-y-4 text-secondary-400">
+                        <li><a href="about.html" class="hover:text-primary-400 transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Our Services</a>
+                        </li>
+                        <li><a href="pricing.html" class="hover:text-primary-400 transition-colors">Pricing</a></li>
+                        <li><a href="blog.html" class="hover:text-primary-400 transition-colors">Safety Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-8">Services</h4>
+                    <ul class="space-y-4 text-secondary-400">
+                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Mold
+                                Remediation</a></li>
+                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Asbestos
+                                Removal</a></li>
+                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Water
+                                Restoration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-8">Contact Info</h4>
+                    <ul class="space-y-4 text-secondary-400">
+                        <li class="flex gap-4">
+                            <i class="fas fa-map-marker-alt text-primary-600 mt-1"></i>
+                            <span>123 Safety Drive, Suite 100<br>Remediation City, ST 12345</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-10 border-t border-secondary-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-secondary-400 text-sm">© 2026 SafeGuard Remediation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

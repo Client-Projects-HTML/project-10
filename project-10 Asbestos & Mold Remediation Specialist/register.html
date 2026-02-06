@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | SafeGuard Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554' },
+                        secondary: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }
+                    },
+                    fontFamily: { 'body': ['Inter', 'sans-serif'], 'heading': ['Outfit', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M50 25 L75 35 L75 55 C75 75 50 85 50 85 C50 85 25 75 25 55 L25 35 Z%22 fill=%22white%22/><circle cx=%2250%22 cy=%2250%22 r=%228%22 fill=%22%232563eb%22/></svg>">
+</head>
+
+<body class="bg-primary-50 dark:bg-secondary-950 font-body min-h-screen flex items-center justify-center p-4 py-20">
+
+    <div class="max-w-2xl w-full animate-on-scroll">
+        <div class="text-center mb-10">
+            <a href="index.html" class="inline-flex items-center gap-2 mb-8 group">
+                <div
+                    class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
+                    <i class="fas fa-shield-virus"></i>
+                </div>
+                <span
+                    class="text-3xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                        class="text-primary-600">Guard</span></span>
+            </a>
+            <h1 class="text-3xl font-bold">Join the Safety Network</h1>
+            <p class="text-secondary-500">Create an account to manage your environmental documentation.</p>
+        </div>
+
+        <div class="card p-8 lg:p-12">
+            <form class="space-y-6">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold mb-2">First Name</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
+                            placeholder="John">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Last Name</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
+                            placeholder="Doe">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2">Company Name (Optional)</label>
+                    <input type="text"
+                        class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
+                        placeholder="Safe Living LLC">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2">Email Address</label>
+                    <input type="email"
+                        class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
+                        placeholder="name@email.com">
+                </div>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Password</label>
+                        <input type="password"
+                            class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
+                            placeholder="••••••••">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Confirm Password</label>
+                        <input type="password"
+                            class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
+                            placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div class="p-6 bg-secondary-50 dark:bg-secondary-800 rounded-xl space-y-4">
+                    <p class="text-sm font-bold mb-2">I am interested in:</p>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 text-primary-600"> <span class="text-sm">Lab
+                                Results</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 text-primary-600"> <span class="text-sm">Abatement
+                                Reports</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 text-primary-600"> <span
+                                class="text-sm">Invoicing</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-2">
+                    <input type="checkbox" id="terms"
+                        class="mt-1 w-4 h-4 text-primary-600 border-secondary-200 rounded focus:ring-primary-600">
+                    <label for="terms" class="text-sm text-secondary-500 leading-tight">I agree to the <a href="#"
+                            class="text-primary-600 font-bold hover:underline">Terms of Service</a> and <a href="#"
+                            class="text-primary-600 font-bold hover:underline">Privacy Policy</a> regarding my health
+                        and environmental data.</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-full py-4 shadow-xl shadow-primary-500/20">Create Secure
+                    Account</button>
+            </form>
+        </div>
+
+        <p class="text-center mt-8 text-secondary-500">
+            Already have an account? <a href="login.html" class="text-primary-600 font-bold hover:underline">Sign In
+                Instead</a>
+        </p>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

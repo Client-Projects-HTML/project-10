@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Results | SafeGuard Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554' },
+                        secondary: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar-link {
+            @apply flex items-center gap-4 px-4 py-4 text-secondary-900 hover:text-primary-600 dark:text-secondary-100 transition-all duration-200 font-medium;
+        }
+
+        .sidebar-link.active {
+            @apply text-primary-600 font-bold;
+        }
+
+        .sidebar-link i {
+            @apply text-2xl w-8 text-center transition-colors;
+        }
+
+        .sidebar-link:hover i,
+        .sidebar-link.active i {
+            @apply text-primary-600;
+        }
+    </style>
+</head>
+
+<body class="bg-secondary-50 dark:bg-secondary-950 text-secondary-900 dark:text-secondary-100 min-h-screen">
+
+    <!-- Mobile Header -->
+    <header
+        class="lg:hidden bg-white dark:bg-secondary-900 border-b border-secondary-100 dark:border-secondary-800 px-4 py-4 flex items-center justify-between fixed top-0 left-0 right-0 z-40">
+        <a href="../index.html" class="flex items-center gap-2 group">
+            <div
+                class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                <i class="fas fa-shield-virus"></i>
+            </div>
+            <span class="text-xl font-bold text-secondary-900 dark:text-white">Safe<span
+                    class="text-primary-600">Guard</span></span>
+        </a>
+        <button id="sidebar-toggle" class="p-2 text-secondary-600 dark:text-secondary-400"><i
+                class="fas fa-bars"></i></button>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="fixed lg:sticky top-0 left-0 z-50 w-72 h-screen bg-white dark:bg-secondary-900 border-r border-secondary-100 dark:border-secondary-800 p-6 flex flex-col transition-transform -translate-x-full lg:translate-x-0">
+            <a href="../index.html" class="hidden lg:flex items-center gap-3 mb-12 px-4 group">
+                <div
+                    class="w-11 h-11 bg-primary-600 rounded-xl flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform shadow-lg shadow-primary-500/20">
+                    <i class="fas fa-shield-virus"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                        class="text-primary-600">Guard</span></span>
+            </a>
+
+            <a href="index.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden mb-1">
+                <i class="fas fa-th-large"></i>
+                <span class="truncate">Dashboard</span>
+            </a>
+            <nav class="flex-1 flex flex-col items-stretch gap-1 overflow-y-auto">
+                <a href="labs.html"
+                    class="sidebar-link active w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-vial"></i>
+                    <span class="truncate">Lab Results</span>
+                </a>
+                <a href="users.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-users"></i>
+                    <span class="truncate">Clients</span>
+                </a>
+                <a href="messages.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-envelope"></i>
+                    <span class="truncate">Messages</span>
+                </a>
+
+                <div
+                    class="pt-12 pb-6 px-4 text-xs font-bold uppercase tracking-[0.2em] text-secondary-300 dark:text-secondary-600 whitespace-nowrap font-heading">
+                    Administration
+                </div>
+
+                <a href="reports.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-chart-pie"></i>
+                    <span class="truncate">Reports</span>
+                </a>
+                <a href="settings.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-cog"></i>
+                    <span class="truncate">Settings</span>
+                </a>
+            </nav>
+
+            <div class="mt-auto pt-6">
+                <div
+                    class="flex items-center gap-4 px-4 py-4 bg-secondary-50 dark:bg-secondary-800 rounded-3xl border border-secondary-100 dark:border-secondary-700/50">
+                    <img src="https://i.pravatar.cc/100?u=admin"
+                        class="w-10 h-10 rounded-full border-2 border-white dark:border-secondary-900 object-cover"
+                        alt="Admin">
+                    <div class="overflow-hidden">
+                        <p class="text-[14px] font-bold text-secondary-900 dark:text-white truncate">Alex Smith</p>
+                        <p class="text-[11px] text-secondary-400 font-medium truncate">Lead Supervisor</p>
+                    </div>
+                    <a href="../login.html"
+                        class="ml-auto w-8 h-8 flex items-center justify-center text-secondary-400 hover:text-red-500 transition-all"><i
+                            class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 min-w-0 flex flex-col min-h-screen pt-20 lg:pt-28">
+            <!-- Navbar -->
+            <div
+                class="hidden lg:flex items-center justify-between px-10 py-6 bg-white dark:bg-secondary-900 border-b border-secondary-100 dark:border-secondary-800 fixed top-0 left-0 right-0 z-30 lg:left-72">
+                <div class="flex items-center gap-6">
+                    <div class="relative w-96 font-bold">
+                        <i
+                            class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-secondary-400 font-bold"></i>
+                        <input type="text"
+                            class="w-full pl-12 pr-4 py-2.5 rounded-xl bg-secondary-50 dark:bg-secondary-800 border-none outline-none focus:ring-2 focus:ring-primary-600"
+                            placeholder="Search projects...">
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2">
+                        <button id="theme-toggle-header"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-secondary-50 dark:bg-secondary-800 text-secondary-600 dark:text-secondary-400 hover:text-primary-600 transition-all shadow-sm">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button id="rtl-toggle"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-secondary-50 dark:bg-secondary-800 text-secondary-600 dark:text-secondary-400 hover:text-primary-600 transition-all shadow-sm">
+                            <i class="fas fa-language"></i>
+                        </button>
+                    </div>
+                    <button class="relative p-2 text-secondary-400 hover:text-primary-600 font-bold"><i
+                            class="fas fa-bell text-xl"></i><span
+                            class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full font-bold"></span></button>
+                </div>
+            </div>
+
+            <div class="p-6 lg:p-10">
+                <div class="flex items-center justify-between mb-10 text-bold">
+                    <h1 class="text-3xl font-bold">Lab Results Manager</h1>
+                    <div class="flex gap-4">
+                        <button
+                            class="bg-white dark:bg-secondary-900 border border-secondary-100 dark:border-secondary-800 px-6 py-3 rounded-xl font-bold hover:bg-secondary-50 transition-colors"><i
+                                class="fas fa-filter"></i> Filter</button>
+                        <button
+                            class="bg-primary-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-primary-500/30 hover:bg-primary-700 transition-all">Upload
+                            Lab Data</button>
+                    </div>
+                </div>
+
+                <div class="grid gap-6">
+                    <!-- Result Item 1 -->
+                    <div
+                        class="bg-white dark:bg-secondary-900 p-8 rounded-3xl border border-secondary-100 dark:border-secondary-800 shadow-xl flex flex-wrap items-center justify-between gap-8 group hover:border-primary-600 transition-all">
+                        <div class="flex items-center gap-6">
+                            <div
+                                class="w-16 h-16 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                                <i class="fas fa-vial-circle-check"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <h3 class="text-xl font-bold">Batch ID: #LAB-9034</h3>
+                                    <span
+                                        class="px-2 py-0.5 bg-red-100 text-red-600 rounded text-[10px] font-bold uppercase">Abnormal
+                                        Spores</span>
+                                </div>
+                                <p class="text-secondary-500 text-sm font-bold">Oakwood Residential • Sampled by R. Chen
+                                </p>
+                                <p class="text-xs text-secondary-400 mt-2 font-bold">Received: Jan 26 • Reported: Jan 27
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-12">
+                            <div class="text-center font-bold">
+                                <p class="text-2xl font-bold text-red-600">850</p>
+                                <p class="text-[10px] font-bold text-secondary-500 uppercase tracking-widest">Count/m³
+                                </p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button
+                                    class="w-12 h-12 rounded-xl bg-secondary-50 dark:bg-secondary-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"><i
+                                        class="fas fa-download font-bold"></i></button>
+                                <button
+                                    class="w-12 h-12 rounded-xl bg-secondary-50 dark:bg-secondary-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"><i
+                                        class="fas fa-share-alt font-bold"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Result Item 2 -->
+                    <div
+                        class="bg-white dark:bg-secondary-900 p-8 rounded-3xl border border-secondary-100 dark:border-secondary-800 shadow-xl flex flex-wrap items-center justify-between gap-8 group hover:border-primary-600 transition-all">
+                        <div class="flex items-center gap-6 text-bold font-bold">
+                            <div
+                                class="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                                <i class="fas fa-vial-circle-check"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-3 mb-1 font-bold">
+                                    <h3 class="text-xl font-bold">Batch ID: #LAB-9052</h3>
+                                    <span
+                                        class="px-2 py-0.5 bg-green-100 text-green-600 rounded text-[10px] font-bold uppercase">Clearance
+                                        Passed</span>
+                                </div>
+                                <p class="text-secondary-500 text-sm font-bold">Westview Business Center •
+                                    Post-Remediation
+                                    Verification</p>
+                                <p class="text-xs text-secondary-400 mt-2 font-bold">Received: Jan 27 • Reported: Jan 28
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-12 font-bold">
+                            <div class="text-center">
+                                <p class="text-2xl font-bold text-green-600">&lt;10</p>
+                                <p class="text-[10px] font-bold text-secondary-500 uppercase tracking-widest">Count/m³
+                                </p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button
+                                    class="w-12 h-12 rounded-xl bg-secondary-50 dark:bg-secondary-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"><i
+                                        class="fas fa-download"></i></button>
+                                <button
+                                    class="w-12 h-12 rounded-xl bg-secondary-50 dark:bg-secondary-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"><i
+                                        class="fas fa-share-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        sidebarToggle?.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        // Theme Toggle
+        function initThemeToggle() {
+            const toggles = [document.getElementById('theme-toggle-header'), document.getElementById('theme-toggle-sidebar')];
+
+            toggles.forEach(toggle => {
+                toggle?.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    const isDark = document.documentElement.classList.contains('dark');
+                    updateThemeIcons(isDark);
+                });
+            });
+
+            function updateThemeIcons(isDark) {
+                const icons = document.querySelectorAll('#theme-toggle-header i, #theme-toggle-sidebar i');
+                icons.forEach(icon => {
+                    if (isDark) {
+                        icon.classList.replace('fa-moon', 'fa-sun');
+                    } else {
+                        icon.classList.replace('fa-sun', 'fa-moon');
+                    }
+                });
+            }
+
+            // Initialize icons based on current theme
+            const isDarkInitial = document.documentElement.classList.contains('dark');
+            updateThemeIcons(isDarkInitial);
+        }
+        initThemeToggle();
+
+        // RTL Toggle
+        const rtlToggle = document.getElementById('rtl-toggle');
+        rtlToggle?.addEventListener('click', () => {
+            const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+            document.documentElement.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
+        });
+    </script>
+</body>
+
+</html>

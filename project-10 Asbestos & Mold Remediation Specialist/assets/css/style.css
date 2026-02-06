@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-body text-secondary-900 bg-white dark:bg-secondary-950 dark:text-secondary-100 transition-colors duration-300;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200;
+    }
+
+    .btn-primary {
+        @apply text-white bg-primary-600 hover:bg-primary-700 focus:ring-primary-500;
+    }
+
+    .btn-secondary {
+        @apply text-primary-700 bg-primary-100 hover:bg-primary-200 dark:bg-secondary-800 dark:text-secondary-100 dark:hover:bg-secondary-700;
+    }
+
+    .card {
+        @apply bg-white dark:bg-secondary-900 rounded-xl shadow-lg border border-secondary-100 dark:border-secondary-800 overflow-hidden transition-all duration-300;
+    }
+
+    .navbar-link {
+        @apply text-secondary-600 hover:text-primary-600 dark:text-secondary-400 dark:hover:text-primary-400 font-medium transition-colors duration-200;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-secondary-100 dark:bg-secondary-900;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-secondary-300 dark:bg-secondary-700 rounded-full hover:bg-secondary-400 dark:hover:bg-secondary-600;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[dir="rtl"] {
+    direction: rtl;
+}

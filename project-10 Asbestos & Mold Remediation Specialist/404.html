@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | SafeGuard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554' },
+                        secondary: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }
+                    },
+                    fontFamily: { 'body': ['Inter', 'sans-serif'], 'heading': ['Outfit', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M50 25 L75 35 L75 55 C75 75 50 85 50 85 C50 85 25 75 25 55 L25 35 Z%22 fill=%22white%22/><circle cx=%2250%22 cy=%2250%22 r=%228%22 fill=%22%232563eb%22/></svg>">
+</head>
+
+<body class="bg-primary-50 dark:bg-secondary-950 font-body min-h-screen flex items-center justify-center p-4">
+
+    <div class="text-center animate-on-scroll">
+        <div class="relative inline-block mb-12">
+            <span
+                class="text-[10rem] lg:text-[15rem] font-bold text-secondary-200 dark:text-secondary-900 leading-none">404</span>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div
+                    class="w-32 h-32 bg-primary-600 rounded-full flex items-center justify-center text-white text-5xl shadow-2xl animate-pulse">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-3xl lg:text-5xl font-heading font-bold mb-6">Environment Not Found</h1>
+        <p class="text-secondary-500 text-xl max-w-md mx-auto mb-10">We've searched every corner, but the page you are
+            looking for has been remediated (or never existed).</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="index.html" class="btn btn-primary px-10">Back to Safety</a>
+            <a href="contact.html" class="btn btn-secondary px-10">Report Issue</a>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SafeGuard Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#cc211b',
+                            lightRed: '#fee2e2',
+                            darkRed: '#a81a15',
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617'
+                        }
+                    },
+                    fontFamily: {
+                        'body': ['Inter', 'sans-serif'],
+                        'heading': ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .login-card {
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+        }
+
+        .input-group input {
+            padding-left: 3.5rem;
+            background-color: #f8fafc;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .input-group input:focus {
+            background-color: #ffffff;
+            box-shadow: 0 0 0 2px #cc211b;
+        }
+
+        .btn-brand {
+            background-color: #cc211b;
+            color: white;
+            transition: all 0.3s;
+            box-shadow: 0 4px 14px 0 rgba(204, 33, 27, 0.39);
+        }
+
+        .btn-brand:hover {
+            background-color: #a81a15;
+            transform: translateY(-1px);
+        }
+
+        .login-option-card {
+            background-color: #f8fafc;
+            border-radius: 1rem;
+            transition: all 0.2s;
+        }
+
+        .login-option-card:hover {
+            background-color: #f1f5f9;
+        }
+
+        .checkbox-custom {
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #cbd5e1;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 font-body min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-md w-full">
+        <!-- Back to Home Option -->
+        <div class="mb-6">
+            <a href="index.html"
+                class="inline-flex items-center gap-2 text-slate-500 hover:text-brand-red font-bold transition-colors group">
+                <i class="fas fa-arrow-left text-sm group-hover:-translate-x-1 transition-transform"></i>
+                Back to Home
+            </a>
+        </div>
+
+        <div class="login-card p-10">
+            <!-- Website Icon/Logo -->
+            <div class="text-center mb-10">
+                <a href="index.html" class="inline-flex items-center gap-3 group">
+                    <div
+                        class="w-12 h-12 bg-brand-red rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-brand-red/30 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <span class="text-3xl font-heading font-bold tracking-tight text-slate-900">Safe<small
+                            class="text-brand-red">Guard</small></span>
+                </a>
+            </div>
+
+            <h1 class="hidden">Login</h1>
+
+            <form class="space-y-8">
+                <!-- Email Field -->
+                <div>
+                    <label class="block text-[#334155] font-bold mb-3 text-lg">Email Address</label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" class="w-full py-4 px-6 rounded-2xl outline-none text-slate-900"
+                            placeholder="name@company.com">
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <label class="text-[#334155] font-bold text-lg">Password</label>
+                        <a href="#" class="text-brand-red font-bold hover:underline">Forgot password?</a>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" class="w-full py-4 px-6 rounded-2xl outline-none text-slate-900"
+                            placeholder="••••••••">
+                    </div>
+                </div>
+
+                <!-- Keep me logged in -->
+                <div class="flex items-center gap-3">
+                    <input type="checkbox" id="remember" class="checkbox-custom accent-brand-red">
+                    <label for="remember" class="text-slate-600 font-semibold cursor-pointer">Keep me logged in</label>
+                </div>
+
+                <!-- Sign In Button -->
+                <button type="button" onclick="location.href='dashboard/client-dashboard.html'"
+                    class="btn-brand w-full py-5 rounded-3xl text-xl font-bold flex items-center justify-center gap-2">
+                    Sign In <i class="fas fa-arrow-right text-sm"></i>
+                </button>
+
+                <!-- Alternate Login Options -->
+                <div class="grid grid-cols-2 gap-4">
+                    <button type="button" onclick="location.href='dashboard/index.html'"
+                        class="login-option-card py-5 flex items-center justify-center gap-3 font-bold text-slate-800">
+                        <i class="fas fa-user-shield text-brand-red"></i> Admin Login
+                    </button>
+                    <button type="button" onclick="location.href='dashboard/client-dashboard.html'"
+                        class="login-option-card py-5 flex items-center justify-center gap-3 font-bold text-slate-800">
+                        <i class="fas fa-user text-brand-red"></i> Client Login
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-12 text-center">
+                <p class="text-slate-600 font-medium">
+                    Don't have an account yet? <a href="register.html"
+                        class="text-brand-red font-bold hover:underline">Create Account</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

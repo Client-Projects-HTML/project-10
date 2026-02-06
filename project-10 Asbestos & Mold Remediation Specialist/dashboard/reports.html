@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | SafeGuard Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554' },
+                        secondary: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar-link {
+            @apply flex items-center gap-4 px-4 py-4 text-secondary-900 hover:text-primary-600 dark:text-secondary-100 transition-all duration-200 font-medium;
+        }
+
+        .sidebar-link.active {
+            @apply text-primary-600 font-bold;
+        }
+
+        .sidebar-link i {
+            @apply text-2xl w-8 text-center transition-colors;
+        }
+
+        .sidebar-link:hover i,
+        .sidebar-link.active i {
+            @apply text-primary-600;
+        }
+    </style>
+</head>
+
+<body class="bg-secondary-50 dark:bg-secondary-950 text-secondary-900 dark:text-secondary-100 min-h-screen">
+
+    <!-- Mobile Header -->
+    <header
+        class="lg:hidden bg-white dark:bg-secondary-900 border-b border-secondary-100 dark:border-secondary-800 px-4 py-4 flex items-center justify-between fixed top-0 left-0 right-0 z-40">
+        <a href="../index.html" class="flex items-center gap-2 group">
+            <div
+                class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                <i class="fas fa-shield-virus"></i>
+            </div>
+            <span class="text-xl font-bold text-secondary-900 dark:text-white">Safe<span
+                    class="text-primary-600">Guard</span></span>
+        </a>
+        <button id="sidebar-toggle" class="p-2 text-secondary-600 dark:text-secondary-400"><i
+                class="fas fa-bars"></i></button>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="fixed lg:sticky top-0 left-0 z-50 w-72 h-screen bg-white dark:bg-secondary-900 border-r border-secondary-100 dark:border-secondary-800 p-6 flex flex-col transition-transform -translate-x-full lg:translate-x-0">
+            <a href="../index.html" class="hidden lg:flex items-center gap-3 mb-12 px-4 group">
+                <div
+                    class="w-11 h-11 bg-primary-600 rounded-xl flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform shadow-lg shadow-primary-500/20">
+                    <i class="fas fa-shield-virus"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                        class="text-primary-600">Guard</span></span>
+            </a>
+
+            <a href="index.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden mb-1">
+                <i class="fas fa-th-large"></i>
+                <span class="truncate">Dashboard</span>
+            </a>
+            <nav class="flex-1 flex flex-col items-stretch gap-1 overflow-y-auto">
+                <a href="labs.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-vial"></i>
+                    <span class="truncate">Lab Results</span>
+                </a>
+                <a href="users.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-users"></i>
+                    <span class="truncate">Clients</span>
+                </a>
+                <a href="messages.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-envelope"></i>
+                    <span class="truncate">Messages</span>
+                </a>
+
+                <div
+                    class="pt-12 pb-6 px-4 text-xs font-bold uppercase tracking-[0.2em] text-secondary-300 dark:text-secondary-600 whitespace-nowrap font-heading">
+                    Administration
+                </div>
+
+
+                <a href="projects.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-project-diagram"></i>
+                    <span class="truncate">Projects</span>
+                </a>
+                <a href="reports.html"
+                    class="sidebar-link active w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-chart-pie"></i>
+                    <span class="truncate">Reports</span>
+                </a>
+                <a href="settings.html" class="sidebar-link w-full flex items-center whitespace-nowrap overflow-hidden">
+                    <i class="fas fa-cog"></i>
+                    <span class="truncate">Settings</span>
+                </a>
+            </nav>
+
+            <div class="mt-auto pt-6">
+                <div
+                    class="flex items-center gap-4 px-4 py-4 bg-secondary-50 dark:bg-secondary-800 rounded-3xl border border-secondary-100 dark:border-secondary-700/50">
+                    <img src="https://i.pravatar.cc/100?u=admin"
+                        class="w-10 h-10 rounded-full border-2 border-white dark:border-secondary-900 object-cover"
+                        alt="Admin">
+                    <div class="overflow-hidden">
+                        <p class="text-[14px] font-bold text-secondary-900 dark:text-white truncate">Alex Smith</p>
+                        <p class="text-[11px] text-secondary-400 font-medium truncate">Lead Supervisor</p>
+                    </div>
+                    <a href="../login.html" class="ml-auto text-secondary-400 hover:text-red-500 transition-all"><i
+                            class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 min-w-0 flex flex-col min-h-screen pt-20 lg:pt-28">
+            <!-- Navbar -->
+            <div
+                class="hidden lg:flex items-center justify-between px-10 py-6 bg-white dark:bg-secondary-900 border-b border-secondary-100 dark:border-secondary-800 fixed top-0 left-0 right-0 z-30 lg:left-72">
+                <div class="flex items-center gap-6">
+                    <div class="relative w-96 font-bold">
+                        <i
+                            class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-secondary-400 font-bold"></i>
+                        <input type="text"
+                            class="w-full pl-12 pr-4 py-2.5 rounded-xl bg-secondary-50 dark:bg-secondary-800 border-none outline-none focus:ring-2 focus:ring-primary-600"
+                            placeholder="Search reports...">
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2">
+                        <button id="theme-toggle-header"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-secondary-50 dark:bg-secondary-800 text-secondary-600 dark:text-secondary-400 hover:text-primary-600 transition-all shadow-sm">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button id="rtl-toggle"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-secondary-50 dark:bg-secondary-800 text-secondary-600 dark:text-secondary-400 hover:text-primary-600 transition-all shadow-sm">
+                            <i class="fas fa-language"></i>
+                        </button>
+                    </div>
+                    <button class="relative p-2 text-secondary-400 hover:text-primary-600 font-bold"><i
+                            class="fas fa-bell text-xl"></i><span
+                            class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full font-bold"></span></button>
+                </div>
+            </div>
+
+            <div class="p-6 lg:p-10 space-y-10 font-bold">
+                <header class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-4xl font-bold mb-2">Operational Reports</h1>
+                        <p class="text-secondary-500 font-bold">Detailed analytics and project summaries.</p>
+                    </div>
+                </header>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div
+                        class="bg-white dark:bg-secondary-900 p-8 rounded-[2.5rem] border border-secondary-100 dark:border-secondary-800 shadow-xl">
+                        <i class="fas fa-chart-line text-4xl text-blue-500 mb-6"></i>
+                        <h2 class="text-xl font-bold mb-4">Project Completion Rate</h2>
+                        <div
+                            class="w-full bg-secondary-100 dark:bg-secondary-800 h-4 rounded-full overflow-hidden mb-4">
+                            <div class="bg-blue-600 h-full w-[85%]"></div>
+                        </div>
+                        <p class="text-secondary-500 text-sm font-bold">85% of projects completed on schedule this
+                            month.</p>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-secondary-900 p-8 rounded-[2.5rem] border border-secondary-100 dark:border-secondary-800 shadow-xl">
+                        <i class="fas fa-shield-alt text-4xl text-green-500 mb-6"></i>
+                        <h2 class="text-xl font-bold mb-4">Safety Compliance</h2>
+                        <div
+                            class="w-full bg-secondary-100 dark:bg-secondary-800 h-4 rounded-full overflow-hidden mb-4">
+                            <div class="bg-green-600 h-full w-[98%]"></div>
+                        </div>
+                        <p class="text-secondary-500 text-sm font-bold">98% compliance across all active site
+                            inspections.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        sidebarToggle?.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle-header');
+        themeToggle?.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const icon = themeToggle.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+
+        // RTL Toggle
+        const rtlToggle = document.getElementById('rtl-toggle');
+        rtlToggle?.addEventListener('click', () => {
+            const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+            document.documentElement.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
+        });
+    </script>
+</body>
+
+</html>

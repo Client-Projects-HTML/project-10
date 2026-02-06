@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SafeGuard Remediation Specialists</title>
+    <!-- CSS and JS similar to index.html -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554' },
+                        secondary: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }
+                    },
+                    fontFamily: { 'body': ['Inter', 'sans-serif'], 'heading': ['Outfit', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M50 25 L75 35 L75 55 C75 75 50 85 50 85 C50 85 25 75 25 55 L25 35 Z%22 fill=%22white%22/><circle cx=%2250%22 cy=%2250%22 r=%228%22 fill=%22%232563eb%22/></svg>">
+</head>
+
+<body
+    class="bg-primary-50 text-secondary-900 dark:bg-secondary-900 dark:text-white transition-colors duration-300 font-body">
+
+    <!-- Header -->
+    <header
+        class="fixed w-full z-50 bg-white dark:bg-secondary-950 border-b border-secondary-100 dark:border-secondary-800">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
+                    <i class="fas fa-shield-virus"></i>
+                </div>
+                <span
+                    class="text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                        class="text-primary-600">Guard</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="about.html" class="navbar-link text-primary-600">About</a>
+                <a href="services.html" class="navbar-link">Services</a>
+                <a href="pricing.html" class="navbar-link">Pricing</a>
+                <a href="contact.html" class="navbar-link">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <!-- Theme/RTL Toggles -->
+                <button id="theme-toggle"
+                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors">
+                    <i id="theme-toggle-dark-icon" class="fas fa-moon"></i>
+                    <i id="theme-toggle-light-icon" class="fas fa-sun hidden"></i>
+                </button>
+                <button id="rtl-toggle"
+                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors text-sm font-bold">
+                    RTL
+                </button>
+
+                <a href="login.html"
+                    class="hidden sm:block text-secondary-600 dark:text-secondary-400 font-bold hover:text-primary-600 transition-colors">Login</a>
+
+                <button id="mobile-menu-button" class="lg:hidden p-2 text-secondary-600 dark:text-secondary-400">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white dark:bg-secondary-950 border-t border-secondary-100 dark:border-secondary-800 px-4 py-6 space-y-4">
+            <div class="flex items-center gap-2 mb-8 pb-4 border-b border-secondary-100 dark:border-secondary-800">
+                <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl">
+                    <i class="fas fa-shield-virus"></i>
+                </div>
+                <span
+                    class="text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                        class="text-primary-600">Guard</span></span>
+            </div>
+            <a href="index.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Home</a>
+            <a href="about.html" class="flex items-center gap-3 text-lg font-medium text-primary-600"><i
+                    class="fas fa-shield-virus"></i> About</a>
+            <a href="services.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Services</a>
+            <a href="pricing.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Pricing</a>
+            <a href="contact.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Contact</a>
+            <div class="pt-4 border-t border-secondary-100 dark:border-secondary-800">
+                <a href="login.html" class="btn btn-primary w-full text-center">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-secondary-900 text-white relative overflow-hidden">
+        <div
+            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1541888941259-79273946027c?auto=format&fit=crop&q=80&w=2070')] bg-cover bg-center">
+        </div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-4xl lg:text-6xl font-heading font-bold mb-4">Our Mission & Team</h1>
+            <p class="text-secondary-400 text-xl max-w-2xl mx-auto">Protecting people and properties through excellence
+                in environmental remediation since 2011.</p>
+        </div>
+    </section>
+
+    <!-- History / About -->
+    <section class="py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-heading font-bold mb-6">A Decade of Safety & Integrity</h2>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-6 text-lg">SafeGuard was founded on a simple
+                        principle: every person deserves to breathe clean air. What started as a small local team in
+                        2011 has grown into a leading regional authority on mold and asbestos remediation.</p>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-8">We invest heavily in the latest HEPA
+                        technologies and laboratory grade testing equipment to ensure that when we say a space is safe,
+                        it truly is. Our team comprises industrial hygienists, certified removal technicians, and
+                        environmental consultants with over 50 years of combined experience.</p>
+
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-4xl font-bold text-primary-600 mb-1">1,500+</p>
+                            <p class="text-sm font-bold text-secondary-500 uppercase">Projects Completed</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-primary-600 mb-1">24/7</p>
+                            <p class="text-sm font-bold text-secondary-500 uppercase">Emergency Service</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative animate-on-scroll">
+                    <img src="assets/img/hero_remediation_specialist.png" alt="Team Work"
+                        class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-24 bg-secondary-50 dark:bg-secondary-900/50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-heading font-bold mb-16 animate-on-scroll">Meet Our Experts</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Team Member -->
+                <div class="card p-6 animate-on-scroll">
+                    <img src="https://i.pravatar.cc/300?u=a"
+                        class="w-full h-80 object-cover rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-500"
+                        alt="Team">
+                    <h4 class="text-xl font-bold mb-1">Robert Chen</h4>
+                    <p class="text-primary-600 font-medium mb-4">Lead Environmental Consultant</p>
+                    <div class="flex justify-center gap-4 text-secondary-400">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member -->
+                <div class="card p-6 animate-on-scroll">
+                    <img src="https://i.pravatar.cc/300?u=b"
+                        class="w-full h-80 object-cover rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-500"
+                        alt="Team">
+                    <h4 class="text-xl font-bold mb-1">Sarah Jenkins</h4>
+                    <p class="text-primary-600 font-medium mb-4">Remediation Supervisor</p>
+                    <div class="flex justify-center gap-4 text-secondary-400">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member -->
+                <div class="card p-6 animate-on-scroll">
+                    <img src="https://i.pravatar.cc/300?u=c"
+                        class="w-full h-80 object-cover rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-500"
+                        alt="Team">
+                    <h4 class="text-xl font-bold mb-1">Marcus Miller</h4>
+                    <p class="text-primary-600 font-medium mb-4">Certified Asbestos Specialist</p>
+                    <div class="flex justify-center gap-4 text-secondary-400">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-heading font-bold mb-16 animate-on-scroll">What Our Clients Say</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="animate-on-scroll">
+                    <i class="fas fa-quote-left text-5xl text-primary-200 mb-8"></i>
+                    <p class="text-2xl italic text-secondary-700 dark:text-secondary-300 mb-8 leading-relaxed">"The
+                        level of professionalism shown by the SafeGuard team was exceptional. They handled our mold
+                        issue with extreme care, and the air quality test results after they finished were perfect.
+                        Highly recommend for any homeowner."</p>
+                    <div class="flex items-center justify-center gap-4">
+                        <img src="https://i.pravatar.cc/100?u=client1" class="w-16 h-16 rounded-full" alt="Client">
+                        <div class="text-left">
+                            <h5 class="font-bold text-lg">Elizabeth Thompson</h5>
+                            <p class="text-secondary-500">Residential Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-950 text-white pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group">
+                        <div
+                            class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <span class="text-2xl font-heading font-bold tracking-tight text-white">Safe<span
+                                class="text-primary-600">Guard</span></span>
+                    </a>
+                    <p class="text-secondary-400 mb-8 max-w-xs">Restoring safe environments through professional
+                        remediation and expert environmental consulting.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-8">Quick Links</h4>
+                    <ul class="space-y-4 text-secondary-400">
+                        <li><a href="about.html" class="hover:text-primary-400 transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Our Services</a>
+                        </li>
+                        <li><a href="pricing.html" class="hover:text-primary-400 transition-colors">Pricing</a></li>
+                        <li><a href="blog.html" class="hover:text-primary-400 transition-colors">Safety Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-8">Services</h4>
+                    <ul class="space-y-4 text-secondary-400">
+                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Mold
+                                Remediation</a></li>
+                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Asbestos
+                                Removal</a></li>
+                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Water
+                                Restoration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-8">Contact Info</h4>
+                    <ul class="space-y-4 text-secondary-400">
+                        <li class="flex gap-4">
+                            <i class="fas fa-map-marker-alt text-primary-600 mt-1"></i>
+                            <span>123 Safety Drive, Suite 100<br>Remediation City, ST 12345</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-10 border-t border-secondary-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-secondary-400 text-sm">© 2026 SafeGuard Remediation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
