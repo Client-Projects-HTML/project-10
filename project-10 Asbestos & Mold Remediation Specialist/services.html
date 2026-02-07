@@ -64,7 +64,7 @@
                 </button>
 
                 <a href="login.html"
-                    class="hidden sm:block text-secondary-600 dark:text-secondary-400 font-bold hover:text-primary-600 transition-colors">Login</a>
+                    class="hidden sm:inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-primary-600 hover:bg-primary-700 transition-all duration-200">Login</a>
 
                 <button id="mobile-menu-button" class="lg:hidden p-2 text-secondary-600 dark:text-secondary-400">
                     <i class="fas fa-bars text-xl"></i>
@@ -75,14 +75,6 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden lg:hidden bg-white dark:bg-secondary-950 border-t border-secondary-100 dark:border-secondary-800 px-4 py-6 space-y-4">
-            <div class="flex items-center gap-2 mb-8 pb-4 border-b border-secondary-100 dark:border-secondary-800">
-                <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl">
-                    <i class="fas fa-shield-virus"></i>
-                </div>
-                <span
-                    class="text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
-                        class="text-primary-600">Guard</span></span>
-            </div>
             <a href="index.html" class="flex items-center gap-3 text-lg font-medium"><i
                     class="fas fa-shield-virus opacity-50"></i> Home</a>
             <a href="about.html" class="flex items-center gap-3 text-lg font-medium"><i
@@ -98,15 +90,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Page Header -->
-    <section class="pt-32 pb-20 bg-primary-600 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl lg:text-6xl font-heading font-bold mb-4">Our Specializations</h1>
-            <p class="text-primary-100 text-xl max-w-2xl mx-auto">Providing a safe environment requires specialized
-                knowledge and equipment. Explore our range of remediation solutions.</p>
-        </div>
-    </section>
 
     <!-- Services Grid List -->
     <section class="py-24">
@@ -205,9 +188,9 @@
                         <label class="block text-sm font-bold mb-2">Project Type</label>
                         <select
                             class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none">
-                            <option>Mold Remediation</option>
-                            <option>Asbestos Removal</option>
-                            <option>Air Quality Testing</option>
+                            <option class="dark:bg-secondary-800">Mold Remediation</option>
+                            <option class="dark:bg-secondary-800">Asbestos Removal</option>
+                            <option class="dark:bg-secondary-800">Air Quality Testing</option>
                         </select>
                     </div>
                     <div>
@@ -233,8 +216,8 @@
 
     <footer class="bg-secondary-950 text-white pt-20 pb-10">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
-                <div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
+                <div class="col-span-2 lg:col-span-1">
                     <a href="index.html" class="flex items-center gap-2 mb-6 group">
                         <div
                             class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
@@ -245,34 +228,65 @@
                     </a>
                     <p class="text-secondary-400 mb-8 max-w-xs">Restoring safe environments through professional
                         remediation and expert environmental consulting.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <div>
+                <div class="col-span-1">
                     <h4 class="text-xl font-bold mb-8">Quick Links</h4>
                     <ul class="space-y-4 text-secondary-400">
                         <li><a href="about.html" class="hover:text-primary-400 transition-colors">About Us</a></li>
                         <li><a href="services.html" class="hover:text-primary-400 transition-colors">Our Services</a>
                         </li>
-                        <li><a href="pricing.html" class="hover:text-primary-400 transition-colors">Pricing</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Case Studies</a>
+                        </li>
                         <li><a href="blog.html" class="hover:text-primary-400 transition-colors">Safety Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-400 transition-colors">Contact</a></li>
+                        <li><a href="events.html" class="hover:text-primary-400 transition-colors">Events</a></li>
+                        <li><a href="careers.html" class="hover:text-primary-400 transition-colors">Careers</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="col-span-1">
                     <h4 class="text-xl font-bold mb-8">Services</h4>
                     <ul class="space-y-4 text-secondary-400">
-                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Mold
-                                Remediation</a></li>
-                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Asbestos
-                                Removal</a></li>
-                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Water
-                                Restoration</a></li>
+                        <li><a href="service-details.html?service=mold"
+                                class="hover:text-primary-400 transition-colors">Mold Remediation</a></li>
+                        <li><a href="service-details.html?service=asbestos"
+                                class="hover:text-primary-400 transition-colors">Asbestos Removal</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Water
+                                Restoration</a>
+                        </li>
+                        <li><a href="service-details.html?service=air-quality"
+                                class="hover:text-primary-400 transition-colors">Air Quality Testing</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Lead Abatement</a>
+                        </li>
                     </ul>
                 </div>
-                <div>
+                <div class="col-span-2 lg:col-span-1">
                     <h4 class="text-xl font-bold mb-8">Contact Info</h4>
                     <ul class="space-y-4 text-secondary-400">
                         <li class="flex gap-4">
                             <i class="fas fa-map-marker-alt text-primary-600 mt-1"></i>
                             <span>123 Safety Drive, Suite 100<br>Remediation City, ST 12345</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-phone-alt text-primary-600 mt-1"></i>
+                            <span>+1 (800) 723-3247</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-envelope text-primary-600 mt-1"></i>
+                            <span>info@safeguard-experts.com</span>
                         </li>
                     </ul>
                 </div>
@@ -280,6 +294,12 @@
             <div
                 class="pt-10 border-t border-secondary-800 flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-secondary-400 text-sm">© 2026 SafeGuard Remediation. All rights reserved.</p>
+                <div class="flex gap-8 text-sm text-secondary-400 items-center">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <span>Powered by <a href="https://www.abhivorn.com/" target="_blank"
+                            class="hover:text-white transition-colors">AbhiVorn technologies pvt.ltd.</a></span>
+                </div>
             </div>
         </div>
     </footer>

@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
         lightIcon?.classList.remove('hidden');
+        darkIcon?.classList.add('hidden');
     } else {
         document.documentElement.classList.remove('dark');
         darkIcon?.classList.remove('hidden');
+        lightIcon?.classList.add('hidden');
     }
 
     themeToggle?.addEventListener('click', () => {

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | SafeGuard Remediation</title>
+    <meta name="description"
+        content="Upcoming events and workshops by SafeGuard Asbestos and Mold Remediation Specialists.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554',
+                        },
+                        secondary: {
+                            50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617',
+                        }
+                    },
+                    fontFamily: {
+                        'body': ['Inter', 'sans-serif'],
+                        'heading': ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M50 25 L75 35 L75 55 C75 75 50 85 50 85 C50 85 25 75 25 55 L25 35 Z%22 fill=%22white%22/><circle cx=%2250%22 cy=%2250%22 r=%228%22 fill=%22%232563eb%22/></svg>">
+</head>
+
+<body
+    class="bg-primary-50 text-secondary-900 dark:bg-secondary-950 dark:text-white transition-colors duration-300 font-body flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header
+        class="fixed w-full z-50 bg-white dark:bg-secondary-950 border-b border-secondary-100 dark:border-secondary-800">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
+                    <i class="fas fa-shield-virus"></i>
+                </div>
+                <span
+                    class="text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                        class="text-primary-600">Guard</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="services.html" class="navbar-link">Services</a>
+                <a href="pricing.html" class="navbar-link">Pricing</a>
+                <a href="contact.html" class="navbar-link">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <!-- Theme/RTL Toggles -->
+                <button id="theme-toggle"
+                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors">
+                    <i id="theme-toggle-dark-icon" class="fas fa-moon"></i>
+                    <i id="theme-toggle-light-icon" class="fas fa-sun hidden"></i>
+                </button>
+                <button id="rtl-toggle"
+                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors text-sm font-bold">
+                    RTL
+                </button>
+
+                <a href="login.html"
+                    class="hidden sm:inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-primary-600 hover:bg-primary-700 transition-all duration-200">Login</a>
+
+                <button id="mobile-menu-button" class="lg:hidden p-2 text-secondary-600 dark:text-secondary-400">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white dark:bg-secondary-950 border-t border-secondary-100 dark:border-secondary-800 px-4 py-6 space-y-4">
+            <a href="index.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Home</a>
+            <a href="about.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> About</a>
+            <a href="services.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Services</a>
+            <a href="pricing.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Pricing</a>
+            <a href="contact.html" class="flex items-center gap-3 text-lg font-medium"><i
+                    class="fas fa-shield-virus opacity-50"></i> Contact</a>
+            <div class="pt-4 border-t border-secondary-100 dark:border-secondary-800">
+                <a href="login.html" class="btn btn-primary w-full text-center">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Events Section -->
+    <section class="flex-grow flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-600 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-600 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="container mx-auto px-4 text-center relative z-10 pt-20">
+            <div
+                class="inline-flex w-20 h-20 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl items-center justify-center text-4xl mb-8 animate-bounce transition-colors">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6 text-secondary-900 dark:text-white">
+                Upcoming <span class="text-primary-600">Events</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-secondary-600 dark:text-secondary-400 mb-10 max-w-2xl mx-auto">
+                We are currently gathering industry experts for our next series of remediation workshops.
+            </p>
+            <div
+                class="inline-block px-8 py-3 rounded-full bg-secondary-900 dark:bg-white text-white dark:text-secondary-900 font-bold tracking-wider text-sm uppercase mb-12 shadow-lg">
+                Coming Soon
+            </div>
+            <div>
+                <a href="index.html"
+                    class="btn btn-primary px-8 py-3 rounded-xl shadow-lg shadow-primary-500/20 inline-flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- No Footer -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -31,7 +31,7 @@
 
     <!-- Header -->
     <header
-        class="fixed w-full z-50 bg-white dark:bg-secondary-950 border-b border-secondary-100 dark:border-secondary-800">
+        class="fixed w-full z-50 bg-white/90 dark:bg-secondary-950/90 backdrop-blur-md border-b border-secondary-100 dark:border-secondary-800 transition-all duration-300">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2 group">
                 <div
@@ -45,27 +45,27 @@
 
             <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center gap-8">
-                <a href="index.html" class="navbar-link">Home</a>
-                <a href="about.html" class="navbar-link">About</a>
-                <a href="services.html" class="navbar-link">Services</a>
-                <a href="pricing.html" class="navbar-link">Pricing</a>
-                <a href="contact.html" class="navbar-link text-primary-600">Contact</a>
+                <a href="index.html" class="navbar-link hover:text-primary-600 transition-colors">Home</a>
+                <a href="about.html" class="navbar-link hover:text-primary-600 transition-colors">About</a>
+                <a href="services.html" class="navbar-link hover:text-primary-600 transition-colors">Services</a>
+                <a href="pricing.html" class="navbar-link hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="contact.html" class="navbar-link text-primary-600 font-semibold">Contact</a>
             </div>
 
             <div class="flex items-center gap-6">
                 <!-- Theme/RTL Toggles -->
                 <button id="theme-toggle"
-                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors">
+                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors ring-1 ring-secondary-200 dark:ring-secondary-700">
                     <i id="theme-toggle-dark-icon" class="fas fa-moon"></i>
                     <i id="theme-toggle-light-icon" class="fas fa-sun hidden"></i>
                 </button>
                 <button id="rtl-toggle"
-                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors text-sm font-bold">
+                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors text-sm font-bold ring-1 ring-secondary-200 dark:ring-secondary-700">
                     RTL
                 </button>
 
                 <a href="login.html"
-                    class="hidden sm:block text-secondary-600 dark:text-secondary-400 font-bold hover:text-primary-600 transition-colors">Login</a>
+                    class="hidden sm:inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-primary-600 hover:bg-primary-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">Login</a>
 
                 <button id="mobile-menu-button" class="lg:hidden p-2 text-secondary-600 dark:text-secondary-400">
                     <i class="fas fa-bars text-xl"></i>
@@ -75,19 +75,11 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="hidden lg:hidden bg-white dark:bg-secondary-950 border-t border-secondary-100 dark:border-secondary-800 px-4 py-6 space-y-4">
-            <div class="flex items-center gap-2 mb-8 pb-4 border-b border-secondary-100 dark:border-secondary-800">
-                <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl">
-                    <i class="fas fa-shield-virus"></i>
-                </div>
-                <span
-                    class="text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
-                        class="text-primary-600">Guard</span></span>
-            </div>
-            <a href="index.html" class="block text-lg font-medium">Home</a>
-            <a href="about.html" class="block text-lg font-medium">About</a>
-            <a href="services.html" class="block text-lg font-medium">Services</a>
-            <a href="pricing.html" class="block text-lg font-medium">Pricing</a>
+            class="hidden lg:hidden bg-white dark:bg-secondary-950 border-t border-secondary-100 dark:border-secondary-800 px-4 py-6 space-y-4 shadow-xl">
+            <a href="index.html" class="block text-lg font-medium hover:text-primary-600">Home</a>
+            <a href="about.html" class="block text-lg font-medium hover:text-primary-600">About</a>
+            <a href="services.html" class="block text-lg font-medium hover:text-primary-600">Services</a>
+            <a href="pricing.html" class="block text-lg font-medium hover:text-primary-600">Pricing</a>
             <a href="contact.html" class="block text-lg font-medium text-primary-600">Contact</a>
             <div class="pt-4 border-t border-secondary-100 dark:border-secondary-800">
                 <a href="login.html" class="btn btn-primary w-full text-center">Login</a>
@@ -95,141 +87,235 @@
         </div>
     </header>
 
-    <section class="pt-32 pb-24 bg-secondary-50 dark:bg-secondary-900/50">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-40 lg:pt-48 lg:pb-56 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/img/hero_remediation_specialist.png" alt="Contact Support"
+                class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-secondary-950/80 backdrop-blur-sm"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-secondary-950 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center animate-on-scroll">
+            <span
+                class="inline-block px-4 py-1.5 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-semibold mb-6 backdrop-blur-md">
+                <i class="fas fa-headset mr-2"></i> 24/7 Support Available
+            </span>
+            <h1 class="text-5xl lg:text-7xl font-heading font-bold mb-6 leading-tight text-white">
+                Get in <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Touch</span>
+            </h1>
+            <p class="text-xl text-secondary-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Have a question or need an emergency inspection? Our certified specialists are ready to help you restore
+                a safe and healthy environment.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Grid Section -->
+    <section class="relative z-20 -mt-24 pb-24">
         <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-20 animate-on-scroll">
-                <h1 class="text-5xl font-heading font-bold mb-6">Get in Touch</h1>
-                <p class="text-secondary-600 dark:text-secondary-400 text-xl">Have a question or need an emergency
-                    inspection? Our team is ready to help you restore a safe environment.</p>
-            </div>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Wrapper for cards to allow overlapping the hero -->
 
-            <div class="grid lg:grid-cols-3 gap-12">
-                <!-- Contact Info Cards -->
-                <div class="lg:col-span-1 space-y-8 animate-on-scroll">
-                    <div class="card p-8 group hover:border-primary-600 transition-colors">
-                        <div
-                            class="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Call Us Anytime</h3>
-                        <p class="text-secondary-500 mb-4">Available 24/7 for emergencies.</p>
-                        <a href="tel:+18007233247" class="text-2xl font-bold text-primary-600">+1 (800) SAFE-AIR</a>
+                <!-- Card 1: Phone -->
+                <div
+                    class="bg-white dark:bg-secondary-900 rounded-2xl shadow-xl border border-secondary-100 dark:border-secondary-800 p-8 text-center group hover:transform hover:-translate-y-1 transition-all duration-300 animate-on-scroll">
+                    <div
+                        class="w-16 h-16 mx-auto bg-primary-50 dark:bg-primary-900/20 rounded-full flex items-center justify-center text-primary-600 text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-phone-alt"></i>
                     </div>
-
-                    <div class="card p-8 group hover:border-primary-600 transition-colors">
-                        <div
-                            class="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Email Support</h3>
-                        <p class="text-secondary-500 mb-4">For general inquiries.</p>
-                        <a href="mailto:info@safeguard.com"
-                            class="text-lg font-bold hover:text-primary-600 transition-colors">info@safeguard.com</a>
-                    </div>
-
-                    <div class="card p-8 group hover:border-primary-600 transition-colors">
-                        <div
-                            class="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Visit Office</h3>
-                        <p class="text-secondary-500 mb-4">Headquarters</p>
-                        <p class="text-lg font-bold">123 Safety Drive, NY 10001</p>
-                    </div>
+                    <h3 class="text-xl font-bold font-heading mb-2">Call Us Anytime</h3>
+                    <p class="text-secondary-500 dark:text-secondary-400 mb-6">Available 24/7 for emergency response.
+                    </p>
+                    <a href="tel:+18007233247"
+                        class="text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors font-heading block">+1
+                        (800) SAFE-AIR</a>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="lg:col-span-2 card p-10 lg:p-16 animate-on-scroll">
-                    <h2 class="text-3xl font-heading font-bold mb-10">Send Us a Message</h2>
-                    <form class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <label
-                                class="block text-sm font-bold mb-3 uppercase tracking-wider text-secondary-500">First
-                                Name</label>
-                            <input type="text"
-                                class="w-full px-6 py-4 rounded-xl border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
-                                placeholder="John">
+                <!-- Card 2: Email -->
+                <div class="bg-white dark:bg-secondary-900 rounded-2xl shadow-xl border border-secondary-100 dark:border-secondary-800 p-8 text-center group hover:transform hover:-translate-y-1 transition-all duration-300 animate-on-scroll"
+                    style="animation-delay: 100ms;">
+                    <div
+                        class="w-16 h-16 mx-auto bg-primary-50 dark:bg-primary-900/20 rounded-full flex items-center justify-center text-primary-600 text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading mb-2">Email Support</h3>
+                    <p class="text-secondary-500 dark:text-secondary-400 mb-6">We respond to all inquiries within 2
+                        hours.</p>
+                    <a href="mailto:info@safeguard.com"
+                        class="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors font-heading block">info@safeguard.com</a>
+                </div>
+
+                <!-- Card 3: Location -->
+                <div class="bg-white dark:bg-secondary-900 rounded-2xl shadow-xl border border-secondary-100 dark:border-secondary-800 p-8 text-center group hover:transform hover:-translate-y-1 transition-all duration-300 animate-on-scroll"
+                    style="animation-delay: 200ms;">
+                    <div
+                        class="w-16 h-16 mx-auto bg-primary-50 dark:bg-primary-900/20 rounded-full flex items-center justify-center text-primary-600 text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading mb-2">Visit Headquarters</h3>
+                    <p class="text-secondary-500 dark:text-secondary-400 mb-6">Mon-Fri: 8am - 6pm</p>
+                    <p class="text-lg font-bold text-secondary-900 dark:text-white font-heading">123 Safety Drive, NY
+                        10001</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="pb-24">
+        <div class="container mx-auto px-4">
+            <div
+                class="max-w-4xl mx-auto bg-white dark:bg-secondary-900 rounded-3xl shadow-2xl border border-secondary-100 dark:border-secondary-800 overflow-hidden animate-on-scroll">
+                <div class="grid md:grid-cols-5">
+                    <!-- Form Side -->
+                    <div class="md:col-span-3 p-8 md:p-12">
+                        <h2 class="text-3xl font-heading font-bold mb-2">Send Message</h2>
+                        <p class="text-secondary-500 dark:text-secondary-400 mb-8">Fill out the form below and we'll get
+                            back to you shortly.</p>
+
+                        <form class="space-y-6">
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div class="relative">
+                                    <input type="text" id="fname"
+                                        class="peer w-full px-4 py-3 rounded-xl border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent placeholder-transparent transition-all"
+                                        placeholder="John">
+                                    <label for="fname"
+                                        class="absolute left-4 -top-2.5 bg-white dark:bg-secondary-900 px-1 text-xs font-semibold text-primary-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-secondary-400 peer-placeholder-shown:top-3.5 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary-600">First
+                                        Name</label>
+                                </div>
+                                <div class="relative">
+                                    <input type="text" id="lname"
+                                        class="peer w-full px-4 py-3 rounded-xl border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent placeholder-transparent transition-all"
+                                        placeholder="Doe">
+                                    <label for="lname"
+                                        class="absolute left-4 -top-2.5 bg-white dark:bg-secondary-900 px-1 text-xs font-semibold text-primary-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-secondary-400 peer-placeholder-shown:top-3.5 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary-600">Last
+                                        Name</label>
+                                </div>
+                            </div>
+
+                            <div class="relative">
+                                <input type="email" id="email"
+                                    class="peer w-full px-4 py-3 rounded-xl border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent placeholder-transparent transition-all"
+                                    placeholder="email@example.com">
+                                <label for="email"
+                                    class="absolute left-4 -top-2.5 bg-white dark:bg-secondary-900 px-1 text-xs font-semibold text-primary-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-secondary-400 peer-placeholder-shown:top-3.5 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary-600">Email
+                                    Address</label>
+                            </div>
+
+                            <div class="relative">
+                                <label for="service"
+                                    class="block text-xs font-semibold text-primary-600 bg-white dark:bg-secondary-900 px-1 absolute left-4 -top-2 z-10">Service
+                                    Required</label>
+                                <select id="service"
+                                    class="w-full px-4 py-3 rounded-xl border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all appearance-none cursor-pointer">
+                                    <option class="dark:bg-secondary-900">Mold Remediation</option>
+                                    <option class="dark:bg-secondary-900">Asbestos Abatement</option>
+                                    <option class="dark:bg-secondary-900">Air Quality Testing</option>
+                                    <option class="dark:bg-secondary-900">Water Damage Restoration</option>
+                                    <option class="dark:bg-secondary-900">Other Inquiry</option>
+                                </select>
+                                <div
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-secondary-500">
+                                    <i class="fas fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+
+                            <div class="relative">
+                                <textarea id="message" rows="4"
+                                    class="peer w-full px-4 py-3 rounded-xl border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent placeholder-transparent transition-all resize-none"
+                                    placeholder="Message"></textarea>
+                                <label for="message"
+                                    class="absolute left-4 -top-2.5 bg-white dark:bg-secondary-900 px-1 text-xs font-semibold text-primary-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-secondary-400 peer-placeholder-shown:top-3.5 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary-600">Describe
+                                    your issue...</label>
+                            </div>
+
+                            <button type="button"
+                                class="btn btn-primary w-full py-4 text-lg font-bold shadow-lg shadow-primary-500/20 group">
+                                Send Message <i
+                                    class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Info Side -->
+                    <div
+                        class="md:col-span-2 bg-gradient-to-br from-primary-600 to-primary-800 p-8 md:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                        <!-- Decorative Content -->
+                        <div
+                            class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none">
                         </div>
-                        <div>
-                            <label class="block text-sm font-bold mb-3 uppercase tracking-wider text-secondary-500">Last
-                                Name</label>
-                            <input type="text"
-                                class="w-full px-6 py-4 rounded-xl border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
-                                placeholder="Doe">
+                        <div
+                            class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none">
                         </div>
-                        <div>
-                            <label
-                                class="block text-sm font-bold mb-3 uppercase tracking-wider text-secondary-500">Email
-                                Address</label>
-                            <input type="email"
-                                class="w-full px-6 py-4 rounded-xl border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
-                                placeholder="john@example.com">
+
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-heading font-bold mb-6">Why Choose SafeGuard?</h3>
+                            <ul class="space-y-6">
+                                <li class="flex items-start gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <i class="fas fa-check text-sm"></i>
+                                    </div>
+                                    <p class="text-primary-100">Certified technicians compliant with OSHA and EPA
+                                        regulations.</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <i class="fas fa-clock text-sm"></i>
+                                    </div>
+                                    <p class="text-primary-100">Emergency response teams ready to deploy within 2 hours.
+                                    </p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <i class="fas fa-shield-alt text-sm"></i>
+                                    </div>
+                                    <p class="text-primary-100"> Comprehensive liability insurance and satisfaction
+                                        guarantee.</p>
+                                </li>
+                            </ul>
                         </div>
-                        <div>
-                            <label
-                                class="block text-sm font-bold mb-3 uppercase tracking-wider text-secondary-500">Service
-                                Goal</label>
-                            <select
-                                class="w-full px-6 py-4 rounded-xl border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600">
-                                <option>Mold Remediation</option>
-                                <option>Asbestos Abatement</option>
-                                <option>Air Quality Testing</option>
-                                <option>General Inquiry</option>
-                            </select>
+
+                        <div
+                            class="relative z-10 mt-12 bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/20">
+                            <p class="italic text-primary-50 mb-4">"SafeGuard's response time was incredible. They saved
+                                our office from extensive water damage."</p>
+                            <div class="flex items-center gap-3">
+                                <img src="https://i.pravatar.cc/100?u=5" alt="Client"
+                                    class="w-10 h-10 rounded-full border-2 border-white/50">
+                                <div>
+                                    <p class="font-bold text-sm">Sarah Johnson</p>
+                                    <p class="text-xs text-primary-200">Facility Manager</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="md:col-span-2">
-                            <label
-                                class="block text-sm font-bold mb-3 uppercase tracking-wider text-secondary-500">Message</label>
-                            <textarea rows="6"
-                                class="w-full px-6 py-4 rounded-xl border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
-                                placeholder="How can we help?"></textarea>
-                        </div>
-                        <div class="md:col-span-2">
-                            <button class="btn btn-primary w-full py-5 text-lg shadow-xl shadow-primary-500/20">Send
-                                Message Request</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Map Section -->
-    <section class="h-[600px] w-full relative">
+    <section class="h-[500px] w-full relative">
         <!-- Google Maps Iframe -->
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1674052044813!5m2!1sen!2s"
-            class="w-full h-full border-0 grayscale dark:invert-[.9] dark:hue-rotate-[180deg]" allowfullscreen=""
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.507640204439!3d37.75781498660993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1674052044813!5m2!1sen!2s"
+            class="w-full h-full border-0 dark:invert-[.85] dark:hue-rotate-180" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
         </iframe>
 
-        <!-- Floating Info Card -->
-        <div class="absolute inset-x-0 bottom-0 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 pointer-events-none">
-            <div class="container mx-auto px-4">
-                <div
-                    class="bg-white dark:bg-secondary-900 border border-secondary-100 dark:border-secondary-800 p-10 rounded-2xl shadow-3xl max-w-sm pointer-events-auto transform hover:-translate-y-2 transition-all duration-300">
-                    <div
-                        class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-xl flex items-center justify-center text-xl mb-6">
-                        <i class="fas fa-location-dot"></i>
-                    </div>
-                    <h4 class="text-2xl font-heading font-bold mb-3">Our Headquarters</h4>
-                    <p class="text-secondary-600 dark:text-secondary-400 mb-8 leading-relaxed">
-                        123 Safety Drive, Suite 100,<br>
-                        Remediation City, ST 12345
-                    </p>
-                    <a href="https://maps.app.goo.gl/uX3f4p" target="_blank"
-                        class="inline-flex items-center gap-2 font-bold text-primary-600 hover:gap-3 transition-all">
-                        Open in Google Maps <i class="fas fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+
     </section>
 
+    <!-- Footer -->
     <footer class="bg-secondary-950 text-white pt-20 pb-10">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
-                <div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
+                <div class="col-span-2 lg:col-span-1">
                     <a href="index.html" class="flex items-center gap-2 mb-6 group">
                         <div
                             class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
@@ -240,34 +326,65 @@
                     </a>
                     <p class="text-secondary-400 mb-8 max-w-xs">Restoring safe environments through professional
                         remediation and expert environmental consulting.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <div>
+                <div class="col-span-1">
                     <h4 class="text-xl font-bold mb-8">Quick Links</h4>
                     <ul class="space-y-4 text-secondary-400">
                         <li><a href="about.html" class="hover:text-primary-400 transition-colors">About Us</a></li>
                         <li><a href="services.html" class="hover:text-primary-400 transition-colors">Our Services</a>
                         </li>
-                        <li><a href="pricing.html" class="hover:text-primary-400 transition-colors">Pricing</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Case Studies</a>
+                        </li>
                         <li><a href="blog.html" class="hover:text-primary-400 transition-colors">Safety Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-400 transition-colors">Contact</a></li>
+                        <li><a href="events.html" class="hover:text-primary-400 transition-colors">Events</a></li>
+                        <li><a href="careers.html" class="hover:text-primary-400 transition-colors">Careers</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="col-span-1">
                     <h4 class="text-xl font-bold mb-8">Services</h4>
                     <ul class="space-y-4 text-secondary-400">
-                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Mold
-                                Remediation</a></li>
-                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Asbestos
-                                Removal</a></li>
-                        <li><a href="service-details.html" class="hover:text-primary-400 transition-colors">Water
-                                Restoration</a></li>
+                        <li><a href="service-details.html?service=mold"
+                                class="hover:text-primary-400 transition-colors">Mold Remediation</a></li>
+                        <li><a href="service-details.html?service=asbestos"
+                                class="hover:text-primary-400 transition-colors">Asbestos Removal</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Water
+                                Restoration</a>
+                        </li>
+                        <li><a href="service-details.html?service=air-quality"
+                                class="hover:text-primary-400 transition-colors">Air Quality Testing</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Lead Abatement</a>
+                        </li>
                     </ul>
                 </div>
-                <div>
+                <div class="col-span-2 lg:col-span-1">
                     <h4 class="text-xl font-bold mb-8">Contact Info</h4>
                     <ul class="space-y-4 text-secondary-400">
                         <li class="flex gap-4">
                             <i class="fas fa-map-marker-alt text-primary-600 mt-1"></i>
                             <span>123 Safety Drive, Suite 100<br>Remediation City, ST 12345</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-phone-alt text-primary-600 mt-1"></i>
+                            <span>+1 (800) 723-3247</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fas fa-envelope text-primary-600 mt-1"></i>
+                            <span>info@safeguard-experts.com</span>
                         </li>
                     </ul>
                 </div>
@@ -275,6 +392,12 @@
             <div
                 class="pt-10 border-t border-secondary-800 flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-secondary-400 text-sm">© 2026 SafeGuard Remediation. All rights reserved.</p>
+                <div class="flex gap-8 text-sm text-secondary-400 items-center">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <span>Powered by <a href="https://www.abhivorn.com/" target="_blank"
+                            class="hover:text-white transition-colors">AbhiVorn technologies pvt.ltd.</a></span>
+                </div>
             </div>
         </div>
     </footer>

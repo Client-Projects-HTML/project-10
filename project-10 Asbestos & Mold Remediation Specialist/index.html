@@ -38,6 +38,16 @@
             }
         }
     </script>
+    <script>
+        // Load theme immediately to prevent flash
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+        // Load RTL preference immediately
+        if (localStorage.getItem('dir') === 'rtl') {
+            document.documentElement.setAttribute('dir', 'rtl');
+        }
+    </script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M50 25 L75 35 L75 55 C75 75 50 85 50 85 C50 85 25 75 25 55 L25 35 Z%22 fill=%22white%22/><circle cx=%2250%22 cy=%2250%22 r=%228%22 fill=%22%232563eb%22/></svg>">
@@ -82,7 +92,7 @@
                 </button>
 
                 <a href="login.html"
-                    class="hidden sm:block text-secondary-600 dark:text-secondary-400 font-bold hover:text-primary-600 transition-colors">Login</a>
+                    class="hidden sm:inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-primary-600 hover:bg-primary-700 transition-all duration-200">Login</a>
 
                 <button id="mobile-menu-button" class="lg:hidden p-2 text-secondary-600 dark:text-secondary-400">
                     <i class="fas fa-bars text-xl"></i>
@@ -92,14 +102,6 @@
 
         <div id="mobile-menu"
             class="hidden lg:hidden bg-white dark:bg-secondary-950 border-t border-secondary-100 dark:border-secondary-800 px-4 py-6 space-y-4">
-            <div class="flex items-center gap-2 mb-8 pb-4 border-b border-secondary-100 dark:border-secondary-800">
-                <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl">
-                    <i class="fas fa-shield-virus"></i>
-                </div>
-                <span
-                    class="text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
-                        class="text-primary-600">Guard</span></span>
-            </div>
             <a href="index.html" class="flex items-center gap-3 text-lg font-medium text-primary-600"><i
                     class="fas fa-shield-virus"></i> Home</a>
             <a href="about.html" class="flex items-center gap-3 text-lg font-medium"><i
@@ -192,54 +194,120 @@
                     your health and property value.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <!-- Service 1 -->
-                <div
-                    class="group animate-on-scroll p-8 rounded-2xl bg-white dark:bg-secondary-900 shadow-lg border border-secondary-100 dark:border-secondary-800 hover:shadow-xl transition-all duration-300">
-                    <div
-                        class="w-20 h-20 bg-primary-50 dark:bg-primary-900/20 text-primary-600 rounded-3xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-gears"></i>
+            <div class="relative group">
+                <!-- Navigation Buttons -->
+                <button id="prev-service"
+                    class="absolute -left-6 lg:-left-12 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white dark:bg-secondary-900 shadow-xl border border-secondary-100 dark:border-secondary-800 flex items-center justify-center text-secondary-600 dark:text-secondary-400 hover:text-primary-600 transition-all opacity-0 group-hover:opacity-100 lg:opacity-100 disabled:opacity-30 disabled:cursor-not-allowed">
+                    <i class="fas fa-chevron-left text-xl"></i>
+                </button>
+                <button id="next-service"
+                    class="absolute -right-6 lg:-right-12 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white dark:bg-secondary-900 shadow-xl border border-secondary-100 dark:border-secondary-800 flex items-center justify-center text-secondary-600 dark:text-secondary-400 hover:text-primary-600 transition-all opacity-0 group-hover:opacity-100 lg:opacity-100 disabled:opacity-30 disabled:cursor-not-allowed">
+                    <i class="fas fa-chevron-right text-xl"></i>
+                </button>
+
+                <!-- Slider Container -->
+                <div class="overflow-hidden px-2 py-4">
+                    <div id="services-slider" class="flex transition-transform duration-500 ease-out gap-8">
+                        <!-- Service 1 -->
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] flex-shrink-0 group/card p-8 rounded-2xl bg-white dark:bg-secondary-900 shadow-lg border border-secondary-100 dark:border-secondary-800 hover:shadow-xl transition-all duration-300">
+                            <div
+                                class="w-20 h-20 bg-primary-50 dark:bg-primary-900/20 text-primary-600 rounded-3xl flex items-center justify-center text-4xl mb-8 group-hover/card:scale-110 transition-transform">
+                                <i class="fas fa-gears"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold mb-4">Mold Remediation</h3>
+                            <p class="text-secondary-600 dark:text-secondary-400 mb-6 leading-relaxed">Expert
+                                identification
+                                and complete removal of mold colonies to restore air quality.</p>
+                            <a href="service-details.html?service=mold"
+                                class="text-primary-600 font-bold flex items-center gap-2 group/link">
+                                Learn More <i
+                                    class="fas fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <!-- Service 2 -->
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] flex-shrink-0 group/card p-8 rounded-2xl bg-white dark:bg-secondary-900 shadow-lg border border-secondary-100 dark:border-secondary-800 hover:shadow-xl transition-all duration-300">
+                            <div
+                                class="w-20 h-20 bg-primary-600 text-white rounded-3xl flex items-center justify-center text-4xl mb-8 group-hover/card:scale-110 transition-transform shadow-lg shadow-primary-500/30">
+                                <i class="fas fa-head-side-mask"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold mb-4">Asbestos Abatement</h3>
+                            <p class="text-secondary-600 dark:text-secondary-400 mb-6 leading-relaxed">Safe and
+                                certified
+                                removal of asbestos-containing materials from your premises.</p>
+                            <a href="service-details.html?service=asbestos"
+                                class="text-primary-600 font-bold flex items-center gap-2 group/link">
+                                Learn More <i
+                                    class="fas fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <!-- Service 3 -->
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] flex-shrink-0 group/card p-8 rounded-2xl bg-white dark:bg-secondary-900 shadow-lg border border-secondary-100 dark:border-secondary-800 hover:shadow-xl transition-all duration-300">
+                            <div
+                                class="w-20 h-20 bg-primary-50 dark:bg-primary-900/20 text-primary-600 rounded-3xl flex items-center justify-center text-4xl mb-8 group-hover/card:scale-110 transition-transform">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold mb-4">Air Quality Testing</h3>
+                            <p class="text-secondary-600 dark:text-secondary-400 mb-6 leading-relaxed">Detailed
+                                laboratory
+                                analysis of indoor air to detect harmful spores and particles.</p>
+                            <a href="service-details.html?service=air-quality"
+                                class="text-primary-600 font-bold flex items-center gap-2 group/link">
+                                Learn More <i
+                                    class="fas fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <!-- Service 4 -->
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] flex-shrink-0 group/card p-8 rounded-2xl bg-white dark:bg-secondary-900 shadow-lg border border-secondary-100 dark:border-secondary-800 hover:shadow-xl transition-all duration-300">
+                            <div
+                                class="w-20 h-20 bg-primary-50 dark:bg-primary-900/20 text-primary-600 rounded-3xl flex items-center justify-center text-4xl mb-8 group-hover/card:scale-110 transition-transform">
+                                <i class="fas fa-droplet font-bold"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold mb-4">Water Damage Restoration</h3>
+                            <p class="text-secondary-600 dark:text-secondary-400 mb-6 leading-relaxed">Professional
+                                extraction and drying services for flooded properties and water leaks.</p>
+                            <a href="services.html"
+                                class="text-primary-600 font-bold flex items-center gap-2 group/link">
+                                Learn More <i
+                                    class="fas fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <!-- Service 5 -->
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] flex-shrink-0 group/card p-8 rounded-2xl bg-white dark:bg-secondary-900 shadow-lg border border-secondary-100 dark:border-secondary-800 hover:shadow-xl transition-all duration-300">
+                            <div
+                                class="w-20 h-20 bg-primary-50 dark:bg-primary-900/20 text-primary-600 rounded-3xl flex items-center justify-center text-4xl mb-8 group-hover/card:scale-110 transition-transform">
+                                <i class="fas fa-paint-roller"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold mb-4">Lead Paint Removal</h3>
+                            <p class="text-secondary-600 dark:text-secondary-400 mb-6 leading-relaxed">Safe abatement of
+                                lead-based paint in residential and commercial structures.</p>
+                            <a href="services.html"
+                                class="text-primary-600 font-bold flex items-center gap-2 group/link">
+                                Learn More <i
+                                    class="fas fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <!-- Service 6 -->
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] flex-shrink-0 group/card p-8 rounded-2xl bg-white dark:bg-secondary-900 shadow-lg border border-secondary-100 dark:border-secondary-800 hover:shadow-xl transition-all duration-300">
+                            <div
+                                class="w-20 h-20 bg-primary-50 dark:bg-primary-900/20 text-primary-600 rounded-3xl flex items-center justify-center text-4xl mb-8 group-hover/card:scale-110 transition-transform">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold mb-4">Environmental Consulting</h3>
+                            <p class="text-secondary-600 dark:text-secondary-400 mb-6 leading-relaxed">Expert surveys
+                                and assessments for environmental compliance and safety.</p>
+                            <a href="services.html"
+                                class="text-primary-600 font-bold flex items-center gap-2 group/link">
+                                Learn More <i
+                                    class="fas fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-heading font-bold mb-4">Mold Remediation</h3>
-                    <p class="text-secondary-600 dark:text-secondary-400 mb-6 leading-relaxed">Expert identification and
-                        complete removal of mold colonies to restore air quality.</p>
-                    <a href="service-details.html?service=mold"
-                        class="text-primary-600 font-bold flex items-center gap-2 group/link">
-                        Learn More <i
-                            class="fas fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-                <!-- Service 2 -->
-                <div
-                    class="group animate-on-scroll p-8 rounded-2xl bg-white dark:bg-secondary-900 shadow-lg border border-secondary-100 dark:border-secondary-800 hover:shadow-xl transition-all duration-300">
-                    <div
-                        class="w-20 h-20 bg-primary-600 text-white rounded-3xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition-transform shadow-lg shadow-primary-500/30">
-                        <i class="fas fa-head-side-mask"></i>
-                    </div>
-                    <h3 class="text-2xl font-heading font-bold mb-4">Asbestos Abatement</h3>
-                    <p class="text-secondary-600 dark:text-secondary-400 mb-6 leading-relaxed">Safe and certified
-                        removal of asbestos-containing materials from your premises.</p>
-                    <a href="service-details.html?service=asbestos"
-                        class="text-primary-600 font-bold flex items-center gap-2 group/link">
-                        Learn More <i
-                            class="fas fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-                <!-- Service 3 -->
-                <div
-                    class="group animate-on-scroll p-8 rounded-2xl bg-white dark:bg-secondary-900 shadow-lg border border-secondary-100 dark:border-secondary-800 hover:shadow-xl transition-all duration-300">
-                    <div
-                        class="w-20 h-20 bg-primary-50 dark:bg-primary-900/20 text-primary-600 rounded-3xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <h3 class="text-2xl font-heading font-bold mb-4">Air Quality Testing</h3>
-                    <p class="text-secondary-600 dark:text-secondary-400 mb-6 leading-relaxed">Detailed laboratory
-                        analysis of indoor air to detect harmful spores and particles.</p>
-                    <a href="service-details.html?service=air-quality"
-                        class="text-primary-600 font-bold flex items-center gap-2 group/link">
-                        Learn More <i
-                            class="fas fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
-                    </a>
                 </div>
             </div>
 
@@ -372,8 +440,8 @@
     <!-- Footer -->
     <footer class="bg-secondary-950 text-white pt-20 pb-10">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2 lg:col-span-1">
                     <div class="flex items-center gap-2 mb-6">
                         <div
                             class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl">
@@ -399,7 +467,7 @@
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div>
+                <div class="col-span-1">
                     <h4 class="text-xl font-bold mb-8">Quick Links</h4>
                     <ul class="space-y-4 text-secondary-400">
                         <li><a href="about.html" class="hover:text-primary-400 transition-colors">About Us</a></li>
@@ -409,21 +477,27 @@
                         </li>
                         <li><a href="blog.html" class="hover:text-primary-400 transition-colors">Safety Blog</a></li>
                         <li><a href="contact.html" class="hover:text-primary-400 transition-colors">Contact</a></li>
+                        <li><a href="events.html" class="hover:text-primary-400 transition-colors">Events</a></li>
+                        <li><a href="careers.html" class="hover:text-primary-400 transition-colors">Careers</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="col-span-1">
                     <h4 class="text-xl font-bold mb-8">Services</h4>
-                    <li><a href="service-details.html?service=mold"
-                            class="hover:text-primary-400 transition-colors">Mold Remediation</a></li>
-                    <li><a href="service-details.html?service=asbestos"
-                            class="hover:text-primary-400 transition-colors">Asbestos Removal</a></li>
-                    <li><a href="services.html" class="hover:text-primary-400 transition-colors">Water Restoration</a>
-                    </li>
-                    <li><a href="service-details.html?service=air-quality"
-                            class="hover:text-primary-400 transition-colors">Air Quality Testing</a></li>
-                    <li><a href="services.html" class="hover:text-primary-400 transition-colors">Lead Abatement</a></li>
+                    <ul class="space-y-4 text-secondary-400">
+                        <li><a href="service-details.html?service=mold"
+                                class="hover:text-primary-400 transition-colors">Mold Remediation</a></li>
+                        <li><a href="service-details.html?service=asbestos"
+                                class="hover:text-primary-400 transition-colors">Asbestos Removal</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Water
+                                Restoration</a>
+                        </li>
+                        <li><a href="service-details.html?service=air-quality"
+                                class="hover:text-primary-400 transition-colors">Air Quality Testing</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Lead Abatement</a>
+                        </li>
+                    </ul>
                 </div>
-                <div>
+                <div class="col-span-2 lg:col-span-1">
                     <h4 class="text-xl font-bold mb-8">Contact Info</h4>
                     <ul class="space-y-4 text-secondary-400">
                         <li class="flex gap-4">
@@ -444,15 +518,72 @@
             <div
                 class="pt-10 border-t border-secondary-800 flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-secondary-400 text-sm">© 2026 SafeGuard Remediation. All rights reserved.</p>
-                <div class="flex gap-8 text-sm text-secondary-400">
+                <div class="flex gap-8 text-sm text-secondary-400 items-center">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <span>Powered by <a href="https://www.abhivorn.com/" target="_blank"
+                            class="hover:text-white transition-colors">AbhiVorn technologies pvt.ltd.</a></span>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('services-slider');
+            const prevBtn = document.getElementById('prev-service');
+            const nextBtn = document.getElementById('next-service');
+
+            if (!slider || !prevBtn || !nextBtn) return;
+
+            let currentIndex = 0;
+            const gap = 32; // gap-8 = 2rem = 32px
+
+            const getVisibleCards = () => {
+                if (window.innerWidth >= 1024) return 3;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            };
+
+            const updateSlider = () => {
+                const card = slider.children[0];
+                const cardWidth = card.offsetWidth;
+                const visibleCards = getVisibleCards();
+                const maxIndex = slider.children.length - visibleCards;
+
+                // Clamp currentIndex
+                currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+
+                const offset = currentIndex * (cardWidth + gap);
+                slider.style.transform = `translateX(-${offset}px)`;
+
+                // Update buttons state
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= maxIndex;
+            };
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex++;
+                updateSlider();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex--;
+                updateSlider();
+            });
+
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(updateSlider, 100);
+            });
+
+            // Initial setup
+            setTimeout(updateSlider, 100); // Small delay to ensure layout is ready
+        });
+    </script>
 </body>
 
 </html>

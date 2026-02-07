@@ -12,11 +12,7 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            red: '#cc211b',
-                            lightRed: '#fee2e2',
-                            darkRed: '#a81a15',
-                        },
+                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554' },
                         secondary: {
                             50: '#f8fafc',
                             100: '#f1f5f9',
@@ -39,11 +35,21 @@
             }
         }
     </script>
+    <script>
+        // Load theme immediately to prevent flash
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+        // Load RTL preference immediately
+        if (localStorage.getItem('dir') === 'rtl') {
+            document.documentElement.setAttribute('dir', 'rtl');
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .login-card {
-            background: #ffffff;
             border-radius: 2rem;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
         }
@@ -57,41 +63,40 @@
             left: 1.25rem;
             top: 50%;
             transform: translateY(-50%);
-            color: #94a3b8;
         }
 
         .input-group input {
             padding-left: 3.5rem;
-            background-color: #f8fafc;
             border: none;
             transition: all 0.2s;
         }
 
         .input-group input:focus {
-            background-color: #ffffff;
-            box-shadow: 0 0 0 2px #cc211b;
+            box-shadow: 0 0 0 2px #2563eb;
         }
 
         .btn-brand {
-            background-color: #cc211b;
+            /* Background updated to primary-600 */
+            background-color: #2563eb;
             color: white;
             transition: all 0.3s;
-            box-shadow: 0 4px 14px 0 rgba(204, 33, 27, 0.39);
+            /* Shadow updated to match primary color */
+            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
         }
 
         .btn-brand:hover {
-            background-color: #a81a15;
+            /* Hover updated to primary-700 */
+            background-color: #1d4ed8;
             transform: translateY(-1px);
         }
 
         .login-option-card {
-            background-color: #f8fafc;
             border-radius: 1rem;
             transition: all 0.2s;
         }
 
         .login-option-card:hover {
-            background-color: #f1f5f9;
+            opacity: 0.9;
         }
 
         .checkbox-custom {
@@ -104,28 +109,30 @@
     </style>
 </head>
 
-<body class="bg-slate-50 font-body min-h-screen flex items-center justify-center p-4">
+<body class="bg-secondary-50 dark:bg-secondary-950 font-body min-h-screen flex items-center justify-center p-4">
+
+    <!-- Fixed Header with Home Button -->
+    <div class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6">
+        <!-- Home Button -->
+        <a href="index.html"
+            class="w-12 h-12 flex items-center justify-center rounded-xl bg-white dark:bg-secondary-900 text-secondary-600 dark:text-secondary-400 hover:text-primary-600 transition-all shadow-lg hover:scale-110">
+            <i class="fas fa-home text-xl"></i>
+        </a>
+    </div>
 
     <div class="max-w-md w-full">
-        <!-- Back to Home Option -->
-        <div class="mb-6">
-            <a href="index.html"
-                class="inline-flex items-center gap-2 text-slate-500 hover:text-brand-red font-bold transition-colors group">
-                <i class="fas fa-arrow-left text-sm group-hover:-translate-x-1 transition-transform"></i>
-                Back to Home
-            </a>
-        </div>
 
-        <div class="login-card p-10">
+        <div class="login-card bg-white dark:bg-secondary-900 p-10">
             <!-- Website Icon/Logo -->
             <div class="text-center mb-10">
                 <a href="index.html" class="inline-flex items-center gap-3 group">
                     <div
-                        class="w-12 h-12 bg-brand-red rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-brand-red/30 group-hover:scale-110 transition-transform">
+                        class="w-12 h-12 bg-primary-600 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-primary-600/30 group-hover:scale-110 transition-transform">
                         <i class="fas fa-shield-virus"></i>
                     </div>
-                    <span class="text-3xl font-heading font-bold tracking-tight text-slate-900">Safe<small
-                            class="text-brand-red">Guard</small></span>
+                    <span
+                        class="text-3xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                            class="text-primary-600">Guard</span></span>
                 </a>
             </div>
 
@@ -134,10 +141,12 @@
             <form class="space-y-8">
                 <!-- Email Field -->
                 <div>
-                    <label class="block text-[#334155] font-bold mb-3 text-lg">Email Address</label>
+                    <label class="block text-secondary-700 dark:text-secondary-300 font-bold mb-3 text-lg">Email
+                        Address</label>
                     <div class="input-group">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" class="w-full py-4 px-6 rounded-2xl outline-none text-slate-900"
+                        <i class="fas fa-envelope text-secondary-400 dark:text-secondary-500"></i>
+                        <input type="email"
+                            class="w-full py-4 px-6 rounded-2xl bg-secondary-50 dark:bg-secondary-800 outline-none text-secondary-900 dark:text-white"
                             placeholder="name@company.com">
                     </div>
                 </div>
@@ -145,20 +154,23 @@
                 <!-- Password Field -->
                 <div>
                     <div class="flex justify-between items-center mb-3">
-                        <label class="text-[#334155] font-bold text-lg">Password</label>
-                        <a href="#" class="text-brand-red font-bold hover:underline">Forgot password?</a>
+                        <label class="text-secondary-700 dark:text-secondary-300 font-bold text-lg">Password</label>
+                        <a href="#" class="text-primary-600 font-bold hover:underline">Forgot password?</a>
                     </div>
                     <div class="input-group">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" class="w-full py-4 px-6 rounded-2xl outline-none text-slate-900"
+                        <i class="fas fa-lock text-secondary-400 dark:text-secondary-500"></i>
+                        <input type="password"
+                            class="w-full py-4 px-6 rounded-2xl bg-secondary-50 dark:bg-secondary-800 outline-none text-secondary-900 dark:text-white"
                             placeholder="••••••••">
                     </div>
                 </div>
 
                 <!-- Keep me logged in -->
                 <div class="flex items-center gap-3">
-                    <input type="checkbox" id="remember" class="checkbox-custom accent-brand-red">
-                    <label for="remember" class="text-slate-600 font-semibold cursor-pointer">Keep me logged in</label>
+                    <input type="checkbox" id="remember" class="checkbox-custom accent-primary-600">
+                    <label for="remember"
+                        class="text-secondary-600 dark:text-secondary-400 font-semibold cursor-pointer">Keep me logged
+                        in</label>
                 </div>
 
                 <!-- Sign In Button -->
@@ -170,20 +182,20 @@
                 <!-- Alternate Login Options -->
                 <div class="grid grid-cols-2 gap-4">
                     <button type="button" onclick="location.href='dashboard/index.html'"
-                        class="login-option-card py-5 flex items-center justify-center gap-3 font-bold text-slate-800">
-                        <i class="fas fa-user-shield text-brand-red"></i> Admin Login
+                        class="login-option-card bg-secondary-50 dark:bg-secondary-800 py-5 flex items-center justify-center gap-3 font-bold text-secondary-800 dark:text-secondary-200">
+                        <i class="fas fa-user-shield text-primary-600"></i> Admin Login
                     </button>
                     <button type="button" onclick="location.href='dashboard/client-dashboard.html'"
-                        class="login-option-card py-5 flex items-center justify-center gap-3 font-bold text-slate-800">
-                        <i class="fas fa-user text-brand-red"></i> Client Login
+                        class="login-option-card bg-secondary-50 dark:bg-secondary-800 py-5 flex items-center justify-center gap-3 font-bold text-secondary-800 dark:text-secondary-200">
+                        <i class="fas fa-user text-primary-600"></i> Client Login
                     </button>
                 </div>
             </form>
 
             <div class="mt-12 text-center">
-                <p class="text-slate-600 font-medium">
+                <p class="text-secondary-600 dark:text-secondary-400 font-medium">
                     Don't have an account yet? <a href="register.html"
-                        class="text-brand-red font-bold hover:underline">Create Account</a>
+                        class="text-primary-600 font-bold hover:underline">Create Account</a>
                 </p>
             </div>
         </div>
