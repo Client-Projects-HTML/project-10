@@ -66,15 +66,87 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.toggle('hidden');
     });
 
+    // Mobile Login Dropdown Toggle
+    const mobileLoginToggle = document.getElementById('mobile-login-toggle');
+    const mobileLoginDropdown = document.getElementById('mobile-login-dropdown');
+
+    mobileLoginToggle?.addEventListener('click', () => {
+        mobileLoginDropdown.classList.toggle('active');
+        const icon = mobileLoginToggle.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('rotate-180');
+        }
+    });
+
+    // Desktop Login Dropdown Toggle
+    const desktopLoginToggle = document.getElementById('desktop-login-toggle');
+    const desktopLoginDropdown = document.getElementById('desktop-login-dropdown');
+
+    desktopLoginToggle?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        desktopLoginDropdown.classList.toggle('active');
+        const icon = desktopLoginToggle.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('rotate-180');
+        }
+    });
+
+    // Desktop Home Dropdown Toggle
+    const desktopHomeToggle = document.getElementById('desktop-home-toggle');
+    const desktopHomeDropdown = document.getElementById('desktop-home-dropdown');
+
+    desktopHomeToggle?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        desktopHomeDropdown.classList.toggle('active');
+        const icon = desktopHomeToggle.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('rotate-180');
+        }
+    });
+
+    // Mobile Home Dropdown Toggle
+    const mobileHomeToggle = document.getElementById('mobile-home-toggle');
+    const mobileHomeDropdown = document.getElementById('mobile-home-dropdown');
+
+    mobileHomeToggle?.addEventListener('click', () => {
+        mobileHomeDropdown.classList.toggle('active');
+        const icon = mobileHomeToggle.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('rotate-180');
+        }
+    });
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', (e) => {
+        // Desktop Login dropdown
+        if (desktopLoginDropdown && !desktopLoginDropdown.contains(e.target) && !desktopLoginToggle?.contains(e.target)) {
+            desktopLoginDropdown.classList.remove('active');
+            desktopLoginToggle?.querySelector('i')?.classList.remove('rotate-180');
+        }
+
+        // Desktop Home dropdown
+        if (desktopHomeDropdown && !desktopHomeDropdown.contains(e.target) && !desktopHomeToggle?.contains(e.target)) {
+            desktopHomeDropdown.classList.remove('active');
+            desktopHomeToggle?.querySelector('i')?.classList.remove('rotate-180');
+        }
+
+        // Mobile dropdown - usually handled by menu close, but added for safety
+        if (mobileLoginDropdown && !mobileLoginDropdown.contains(e.target) && !mobileLoginToggle?.contains(e.target)) {
+            // We only close if it's not the toggle itself
+            // Note: mobile menu usually hides the whole thing anyway
+        }
+    });
+
     // Intersection Observer for animations
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                entry.target.classList.add('active');
                 observer.unobserve(entry.target);
             }
         });

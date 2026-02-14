@@ -48,6 +48,12 @@
     animation: fadeIn 0.5s ease-out forwards;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -62,4 +68,85 @@
 
 [dir="rtl"] {
     direction: rtl;
+}
+
+[dir="rtl"] .dropdown-content {
+    right: auto;
+    left: 0;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    margin-top: 0.5rem;
+    width: 15rem;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.5rem);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 50;
+    overflow: hidden;
+}
+
+.dark .dropdown-content {
+    background-color: #0f172a;
+    border-color: #1e293b;
+}
+
+.dropdown-content.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.active {
+    @apply opacity-100 translate-y-0;
+}
+
+.glass {
+    @apply bg-white/70 dark:bg-secondary-900/70 backdrop-blur-xl border border-white/20;
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown-content {
+    display: none;
+    padding-inline-start: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.mobile-dropdown-content.active {
+    display: block;
+}
+
+/* Icon rotation for both desktop and mobile */
+.rotate-180 {
+    transform: rotate(180deg);
 }

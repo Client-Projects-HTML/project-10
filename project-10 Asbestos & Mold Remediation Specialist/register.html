@@ -39,99 +39,36 @@
 <body class="bg-primary-50 dark:bg-secondary-950 font-body min-h-screen flex items-center justify-center p-4 py-20">
 
     <div class="max-w-2xl w-full animate-on-scroll">
-        <div class="text-center mb-10">
-            <a href="index.html" class="inline-flex items-center gap-2 mb-8 group">
-                <div
-                    class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
-                    <i class="fas fa-shield-virus"></i>
-                </div>
-                <span
-                    class="text-3xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
-                        class="text-primary-600">Guard</span></span>
-            </a>
-            <h1 class="text-3xl font-bold">Join the Safety Network</h1>
-            <p class="text-secondary-500">Create an account to manage your environmental documentation.</p>
-        </div>
+        <label class="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-primary-600"> <span class="text-sm">Abatement
+                Reports</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-primary-600"> <span class="text-sm">Invoicing</span>
+        </label>
+    </div>
+    </div>
 
-        <div class="card p-8 lg:p-12">
-            <form class="space-y-6">
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-bold mb-2">First Name</label>
-                        <input type="text"
-                            class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
-                            placeholder="John">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Last Name</label>
-                        <input type="text"
-                            class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
-                            placeholder="Doe">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-sm font-bold mb-2">Company Name (Optional)</label>
-                    <input type="text"
-                        class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
-                        placeholder="Safe Living LLC">
-                </div>
-                <div>
-                    <label class="block text-sm font-bold mb-2">Email Address</label>
-                    <input type="email"
-                        class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
-                        placeholder="name@email.com">
-                </div>
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Password</label>
-                        <input type="password"
-                            class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
-                            placeholder="••••••••">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Confirm Password</label>
-                        <input type="password"
-                            class="w-full px-4 py-3 rounded-lg border border-secondary-200 dark:border-secondary-700 bg-transparent outline-none focus:ring-2 focus:ring-primary-600"
-                            placeholder="••••••••">
-                    </div>
-                </div>
+    <div class="flex items-start gap-2">
+        <input type="checkbox" id="terms"
+            class="mt-1 w-4 h-4 text-primary-600 border-secondary-200 rounded focus:ring-primary-600">
+        <label for="terms" class="text-sm text-secondary-500 leading-tight">I agree to the <a href="#"
+                class="text-primary-600 font-bold hover:underline">Terms of Service</a> and
+            <a href="#" class="text-primary-600 font-bold hover:underline">Privacy Policy</a>
+            regarding my health
+            and environmental data.</label>
+    </div>
 
-                <div class="p-6 bg-secondary-50 dark:bg-secondary-800 rounded-xl space-y-4">
-                    <p class="text-sm font-bold mb-2">I am interested in:</p>
-                    <div class="flex flex-wrap gap-4">
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" class="w-4 h-4 text-primary-600"> <span class="text-sm">Lab
-                                Results</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" class="w-4 h-4 text-primary-600"> <span class="text-sm">Abatement
-                                Reports</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" class="w-4 h-4 text-primary-600"> <span
-                                class="text-sm">Invoicing</span>
-                        </label>
-                    </div>
-                </div>
+    <button type="submit" class="btn btn-primary w-full py-4 shadow-xl shadow-primary-500/20">Create
+        Secure
+        Account</button>
+    </form>
+    </div>
 
-                <div class="flex items-start gap-2">
-                    <input type="checkbox" id="terms"
-                        class="mt-1 w-4 h-4 text-primary-600 border-secondary-200 rounded focus:ring-primary-600">
-                    <label for="terms" class="text-sm text-secondary-500 leading-tight">I agree to the <a href="#"
-                            class="text-primary-600 font-bold hover:underline">Terms of Service</a> and <a href="#"
-                            class="text-primary-600 font-bold hover:underline">Privacy Policy</a> regarding my health
-                        and environmental data.</label>
-                </div>
-
-                <button type="submit" class="btn btn-primary w-full py-4 shadow-xl shadow-primary-500/20">Create Secure
-                    Account</button>
-            </form>
-        </div>
-
-        <p class="text-center mt-8 text-secondary-500">
-            Already have an account? <a href="login.html" class="text-primary-600 font-bold hover:underline">Sign In
-                Instead</a>
-        </p>
+    <p class="text-center mt-8 text-secondary-500">
+        Already have an account? <a href="login.html" class="text-primary-600 font-bold hover:underline">Sign In
+            Instead</a>
+    </p>
     </div>
 
     <script src="assets/js/main.js"></script>
