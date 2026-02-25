@@ -12,20 +12,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554' },
-                        secondary: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            950: '#020617'
-                        }
+                        primary: { 50: '#F0FDFA', 100: '#D1FAE5', 200: '#99F6E4', 300: '#5EEAD4', 400: '#2D1917', 500: '#0D9488', 600: '#115E59', 700: '#0F766E', 800: '#115E59', 900: '#134E4A', 950: '#042F2E' },
+                        secondary: { 50: '#F9FAFB', 100: '#F3F4F6', 200: '#E5E7EB', 300: '#D1D5DB', 400: '#9CA3AF', 500: '#6B7280', 600: '#4B5563', 700: '#374151', 800: '#1F2937', 900: '#111827', 950: '#030712' }
                     },
                     fontFamily: {
                         'body': ['Inter', 'sans-serif'],
@@ -72,21 +60,21 @@
         }
 
         .input-group input:focus {
-            box-shadow: 0 0 0 2px #2563eb;
+            box-shadow: 0 0 0 2px #115E59;
         }
 
         .btn-brand {
             /* Background updated to primary-600 */
-            background-color: #2563eb;
+            background-color: #115E59;
             color: white;
             transition: all 0.3s;
             /* Shadow updated to match primary color */
-            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+            box-shadow: 0 4px 14px 0 rgba(17, 94, 89, 0.39);
         }
 
         .btn-brand:hover {
             /* Hover updated to primary-700 */
-            background-color: #1d4ed8;
+            background-color: #0F766E;
             transform: translateY(-1px);
         }
 
@@ -112,7 +100,7 @@
 <body class="bg-secondary-50 dark:bg-secondary-950 font-body min-h-screen flex items-center justify-center p-4">
 
     <!-- Fixed Header with Home Button -->
-    <div class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6">
+    <div class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 sm:p-6">
         <!-- Home Button -->
         <a href="index.html"
             class="w-12 h-12 flex items-center justify-center rounded-xl bg-white dark:bg-secondary-900 text-secondary-600 dark:text-secondary-400 hover:text-primary-600 transition-all shadow-lg hover:scale-110">
@@ -122,7 +110,7 @@
 
     <div class="max-w-md w-full">
 
-        <div class="login-card bg-white dark:bg-secondary-900 p-10">
+        <div class="login-card bg-white dark:bg-secondary-900 p-6 sm:p-10">
             <!-- Website Icon/Logo -->
             <div class="text-center mb-10">
                 <a href="index.html" class="inline-flex items-center gap-3 group">
@@ -139,24 +127,13 @@
             <h1 class="hidden">Login</h1>
 
             <form class="space-y-8">
-                <!-- Alternate Login Options -->
-                <div class="grid grid-cols-2 gap-4">
-                    <button type="button" onclick="location.href='dashboard/index.html'"
-                        class="login-option-card bg-secondary-50 dark:bg-secondary-800 py-5 flex items-center justify-center gap-3 font-bold text-secondary-800 dark:text-secondary-200">
-                        <i class="fas fa-user-shield text-primary-600"></i> Admin Login
-                    </button>
-                    <button type="button" onclick="location.href='dashboard/client-dashboard.html'"
-                        class="login-option-card bg-secondary-50 dark:bg-secondary-800 py-5 flex items-center justify-center gap-3 font-bold text-secondary-800 dark:text-secondary-200">
-                        <i class="fas fa-user text-primary-600"></i> Client Login
-                    </button>
-                </div>
 
                 <!-- Email Field -->
                 <div>
                     <label class="block text-secondary-700 dark:text-secondary-300 font-bold mb-3 text-lg">Email
                         Address</label>
                     <div class="input-group">
-                        <i class="fas fa-envelope text-secondary-400 dark:text-secondary-500"></i>
+                        <i class="fas fa-envelope w-5 text-center text-secondary-400 dark:text-secondary-500"></i>
                         <input type="email"
                             class="w-full py-4 px-6 rounded-2xl bg-secondary-50 dark:bg-secondary-800 outline-none text-secondary-900 dark:text-white"
                             placeholder="name@company.com">
@@ -170,7 +147,7 @@
                         <a href="#" class="text-primary-600 font-bold hover:underline">Forgot password?</a>
                     </div>
                     <div class="input-group">
-                        <i class="fas fa-lock text-secondary-400 dark:text-secondary-500"></i>
+                        <i class="fas fa-lock w-5 text-center text-secondary-400 dark:text-secondary-500"></i>
                         <input type="password"
                             class="w-full py-4 px-6 rounded-2xl bg-secondary-50 dark:bg-secondary-800 outline-none text-secondary-900 dark:text-white"
                             placeholder="••••••••">
@@ -179,7 +156,7 @@
 
                 <!-- Keep me logged in -->
                 <div class="flex items-center gap-3">
-                    <input type="checkbox" id="remember" class="checkbox-custom accent-primary-600">
+                    <input type="checkbox" id="remember" class="checkbox-custom accent-primary-600 flex-shrink-0">
                     <label for="remember"
                         class="text-secondary-600 dark:text-secondary-400 font-semibold cursor-pointer">Keep me logged
                         in</label>
@@ -187,9 +164,28 @@
 
                 <!-- Sign In Button -->
                 <button type="button" onclick="location.href='dashboard/client-dashboard.html'"
-                    class="btn-brand w-full py-5 rounded-3xl text-xl font-bold flex items-center justify-center gap-2">
+                    class="btn-brand w-full py-4 rounded-2xl text-lg font-bold flex items-center justify-center gap-2">
                     Sign In <i class="fas fa-arrow-right text-sm"></i>
                 </button>
+
+                <!-- Social Login Divider -->
+                <div class="relative flex items-center justify-center py-2">
+                    <div class="border-t border-secondary-200 dark:border-secondary-800 w-full"></div>
+                    <span class="absolute bg-white dark:bg-secondary-900 px-4 text-secondary-500 text-sm font-medium">Or
+                        continue with</span>
+                </div>
+
+                <!-- Social Login Buttons -->
+                <div class="grid grid-cols-2 gap-4">
+                    <button type="button"
+                        class="flex items-center justify-center gap-3 py-3.5 px-4 rounded-2xl border border-secondary-200 dark:border-secondary-800 hover:bg-secondary-50 dark:hover:bg-secondary-800 transition-all font-bold text-secondary-700 dark:text-secondary-300">
+                        <i class="fab fa-google text-red-500 text-xl"></i> Google
+                    </button>
+                    <button type="button"
+                        class="flex items-center justify-center gap-3 py-3.5 px-4 rounded-2xl border border-secondary-200 dark:border-secondary-800 hover:bg-secondary-50 dark:hover:bg-secondary-800 transition-all font-bold text-secondary-700 dark:text-secondary-300">
+                        <i class="fab fa-github text-secondary-900 dark:text-white text-xl"></i> GitHub
+                    </button>
+                </div>
 
             </form>
 

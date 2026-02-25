@@ -12,8 +12,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554' },
-                        secondary: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }
+                        primary: { 50: '#F0FDFA', 100: '#D1FAE5', 200: '#99F6E4', 300: '#5EEAD4', 400: '#2D1917', 500: '#0D9488', 600: '#115E59', 700: '#0F766E', 800: '#115E59', 900: '#134E4A', 950: '#042F2E' },
+                        secondary: { 50: '#F9FAFB', 100: '#F3F4F6', 200: '#E5E7EB', 300: '#D1D5DB', 400: '#9CA3AF', 500: '#6B7280', 600: '#4B5563', 700: '#374151', 800: '#1F2937', 900: '#111827', 950: '#030712' }
                     },
                     fontFamily: { 'body': ['Inter', 'sans-serif'], 'heading': ['Outfit', 'sans-serif'] }
                 }
@@ -32,14 +32,14 @@
     <!-- Header -->
     <header
         class="fixed w-full z-50 bg-white dark:bg-secondary-950 border-b border-secondary-100 dark:border-secondary-800">
-        <nav class="container mx-auto px-6 py-5 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 group">
+        <nav class="container mx-auto px-4 sm:px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group">
                 <div
-                    class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform">
+                    class="w-8 h-8 sm:w-10 sm:h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white text-lg sm:text-xl group-hover:scale-110 transition-transform">
                     <i class="fas fa-shield-virus"></i>
                 </div>
                 <span
-                    class="text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
+                    class="text-xl sm:text-2xl font-heading font-bold tracking-tight text-secondary-900 dark:text-white">Safe<span
                         class="text-primary-600">Guard</span></span>
             </a>
 
@@ -65,26 +65,29 @@
                 <a href="contact.html" class="navbar-link">Contact</a>
             </div>
 
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 sm:gap-6">
                 <!-- Theme/RTL Toggles -->
                 <button id="theme-toggle"
-                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors">
-                    <i id="theme-toggle-dark-icon" class="fas fa-moon"></i>
-                    <i id="theme-toggle-light-icon" class="fas fa-sun hidden"></i>
+                    class="p-1.5 sm:p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors">
+                    <i id="theme-toggle-dark-icon" class="fas fa-moon text-sm sm:text-base"></i>
+                    <i id="theme-toggle-light-icon" class="fas fa-sun hidden text-sm sm:text-base"></i>
                 </button>
                 <button id="rtl-toggle"
-                    class="p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors text-sm font-bold">
+                    class="p-1.5 sm:p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors text-[10px] sm:text-sm font-bold">
                     RTL
                 </button>
 
+                <a href="register.html" class="hidden md:block btn btn-secondary !py-2 !px-6 text-sm">Sign Up</a>
+
                 <div class="relative hidden sm:block">
-                    <div class="inline-flex items-center rounded-lg shadow-sm overflow-hidden">
+                    <div
+                        class="inline-flex items-center rounded-xl shadow-lg shadow-primary-500/10 overflow-hidden border border-primary-100 dark:border-primary-800">
                         <a href="login.html"
-                            class="px-6 py-2 text-base font-medium text-white bg-primary-600 hover:bg-primary-700 transition-all duration-200 border-r border-primary-500">
+                            class="px-6 py-2.5 text-base font-bold text-white bg-primary-600 hover:bg-primary-700 transition-all duration-200 border-r border-primary-500">
                             Login
                         </a>
                         <button id="desktop-login-toggle"
-                            class="px-3 py-2 text-white bg-primary-600 hover:bg-primary-700 transition-all duration-200 outline-none">
+                            class="px-3 py-2.5 text-white bg-primary-600 hover:bg-primary-700 transition-all duration-200 outline-none">
                             <i class="fas fa-chevron-down text-xs transition-transform"></i>
                         </button>
                     </div>
@@ -108,7 +111,7 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="hidden lg:hidden bg-white dark:bg-secondary-950 border-t border-secondary-100 dark:border-secondary-800 px-4 py-6 space-y-4">
+            class="hidden lg:hidden bg-white dark:bg-secondary-950 border-t border-secondary-100 dark:border-secondary-800 px-4 pt-6 pb-20 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto">
             <!-- Mobile Home Dropdown -->
             <div class="space-y-2">
                 <button id="mobile-home-toggle" class="flex items-center justify-between w-full text-lg font-medium">
@@ -136,13 +139,15 @@
                     class="fas fa-shield-virus opacity-50"></i> Contact</a>
             <div class="pt-4 border-t border-secondary-100 dark:border-secondary-800">
                 <div>
-                    <div class="flex items-center gap-2 mb-2">
-                        <a href="login.html"
-                            class="px-4 py-1.5 bg-primary-600 text-white rounded-lg text-sm font-medium">Login</a>
-                        <button id="mobile-login-toggle"
-                            class="w-8 h-8 flex items-center justify-center bg-primary-50 dark:bg-primary-900/50 text-primary-600 rounded-lg">
-                            <i class="fas fa-chevron-down text-[10px] transition-transform"></i>
-                        </button>
+                    <div class="flex flex-col gap-3 mb-4">
+                        <a href="register.html" class="btn btn-primary w-full !py-3">Sign Up</a>
+                        <div class="flex items-center gap-2">
+                            <a href="login.html" class="btn btn-outline flex-1 !py-3">Login</a>
+                            <button id="mobile-login-toggle"
+                                class="w-12 h-12 flex items-center justify-center bg-primary-50 dark:bg-primary-900/50 text-primary-600 rounded-xl transition-all border border-primary-100 dark:border-primary-800/50">
+                                <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                            </button>
+                        </div>
                     </div>
                     <div id="mobile-login-dropdown" class="mobile-dropdown-content space-y-1">
                         <a href="dashboard/client-dashboard.html"
@@ -159,114 +164,258 @@
         </div>
     </header>
 
-    <section class="pt-32 pb-24 lg:pt-48 lg:pb-32">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-20 animate-on-scroll">
-                <h1 class="text-5xl font-heading font-bold mb-6">Simple, Transparent Pricing</h1>
-                <p class="text-secondary-600 dark:text-secondary-400 text-xl">Investment in remediation varies by
-                    project scale. We offer standardized testing and clearance packages.</p>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-600/10 rounded-full blur-[120px] -translate-y-1/2">
+            </div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] translate-y-1/2">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-heading font-bold mb-8 leading-tight">
+                    Professional Plans for <span class="text-primary-600">Every Property.</span>
+                </h1>
+                <p class="text-secondary-600 dark:text-secondary-400 text-xl mb-12">
+                    Standardized testing and clearance packages designed for peace of mind. No hidden fees, just pure
+                    clarity.
+                </p>
+
+                <!-- Pricing Toggle -->
+                <div class="flex items-center justify-center gap-4 mb-12">
+                    <span class="text-sm font-bold secondary-600">Single Visit</span>
+                    <button id="pricing-toggle"
+                        class="relative w-16 h-8 rounded-full bg-secondary-200 dark:bg-secondary-800 p-1 transition-colors duration-300">
+                        <div
+                            class="dot absolute left-1 top-1 w-6 h-6 rounded-full bg-white shadow-sm transition-transform duration-300">
+                        </div>
+                    </button>
+                    <span class="text-sm font-bold secondary-600">Annual Retainer <span
+                            class="ml-1 text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">Save
+                            20%</span></span>
+                </div>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-10">
-                <!-- Plan 1 -->
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Standard Plan -->
                 <div
-                    class="bg-white dark:bg-secondary-900 rounded-xl shadow-lg border border-secondary-100 dark:border-secondary-800 overflow-hidden transition-all duration-300 p-10 flex flex-col animate-on-scroll">
-                    <h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-secondary-500">Standard Test</h3>
-                    <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-4xl font-bold font-heading">$199</span>
-                        <span class="text-secondary-500">/visit</span>
+                    class="group relative p-10 bg-white dark:bg-secondary-900/50 rounded-[2.5rem] border border-secondary-100 dark:border-secondary-800 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col animate-on-scroll backdrop-blur-sm">
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold text-secondary-500 uppercase tracking-widest mb-2">Standard Test
+                        </h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-5xl font-bold font-heading">$199</span>
+                            <span class="text-secondary-400 font-medium">/visit</span>
+                        </div>
                     </div>
-                    <p class="text-secondary-600 dark:text-secondary-400 mb-8">Perfect for home buyers and sellers
-                        needing verification.</p>
-                    <ul class="space-y-4 mb-10 flex-1">
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Visual
-                            Inspection</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> 2 Air Quality
-                            Samples</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Digital Lab
-                            Report</li>
-                        <li class="flex items-center gap-3 text-secondary-400"><i class="fas fa-times"></i> Asbestos
-                            Bulk Test</li>
-                        <li class="flex items-center gap-3 text-secondary-400"><i class="fas fa-times"></i> Clearance
-                            Certificate</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary w-full">Book Now</a>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-8 leading-relaxed">
+                        Essential verification for residential property transactions and peace of mind.
+                    </p>
+                    <div class="space-y-5 mb-10 flex-1">
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 flex items-center justify-center text-xs"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-medium">Visual Inspection</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 flex items-center justify-center text-xs"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-medium">2 Indoor Air Samples</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 flex items-center justify-center text-xs"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-medium">Direct-to-Cloud Lab Report</span>
+                        </div>
+                        <div class="flex items-center gap-4 opacity-40">
+                            <span
+                                class="w-6 h-6 rounded-full bg-secondary-100 flex items-center justify-center text-xs"><i
+                                    class="fas fa-times"></i></span>
+                            <span class="font-medium">Asbestos Bulk Testing</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-secondary w-full py-5 rounded-2xl">
+                        Book Assessment
+                    </a>
                 </div>
 
-                <!-- Plan 2 (Featured) -->
+                <!-- Pro Plan (Most Popular) -->
                 <div
-                    class="bg-white dark:bg-secondary-900 rounded-xl shadow-lg border border-secondary-100 dark:border-secondary-800 transition-all duration-300 p-10 flex flex-col relative scale-105 z-10 animate-on-scroll shadow-2xl shadow-primary-500/10">
+                    class="group relative p-10 bg-white dark:bg-secondary-900 rounded-[2.5rem] border-2 border-primary-600 shadow-2xl scale-105 z-10 flex flex-col animate-on-scroll">
                     <div
-                        class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 bg-primary-600 text-white rounded-full text-xs font-bold uppercase tracking-widest">
+                        class="absolute top-0 right-10 -translate-y-1/2 px-6 py-2 bg-primary-600 text-white rounded-full text-sm font-bold uppercase tracking-widest shadow-lg shadow-primary-600/30">
                         Most Popular</div>
-                    <h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-primary-600">Pro Remediation</h3>
-                    <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-4xl font-bold font-heading">$899</span>
-                        <span class="text-secondary-500">/base</span>
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold text-primary-600 uppercase tracking-widest mb-2">Pro Remediation
+                        </h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-5xl font-bold font-heading text-secondary-900 dark:text-white">$899</span>
+                            <span class="text-secondary-500 font-medium">/base</span>
+                        </div>
                     </div>
-                    <p class="text-secondary-600 dark:text-secondary-400 mb-8">Comprehensive cleanup for attic or
-                        basement mold issues.</p>
-                    <ul class="space-y-4 mb-10 flex-1 font-medium">
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600 text-lg"></i> Full
-                            Containment Setup</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600 text-lg"></i> HEPA
-                            Air Scrubbing</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600 text-lg"></i>
-                            Anti-microbial Fogging</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600 text-lg"></i> 3 Air
-                            Lab Samples</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600 text-lg"></i>
-                            Validated Clearance</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary w-full">Get Started</a>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-8 leading-relaxed">
+                        Full-scale remediation for identified mold issues in specific zones or rooms.
+                    </p>
+                    <div class="space-y-5 mb-10 flex-1 text-secondary-900 dark:text-white">
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-600 text-white flex items-center justify-center text-xs shadow-md shadow-primary-600/30"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-bold">HEPA Air Scrubbing (72h)</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-600 text-white flex items-center justify-center text-xs shadow-md shadow-primary-600/30"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-bold">Zonal Containment Setup</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-600 text-white flex items-center justify-center text-xs shadow-md shadow-primary-600/30"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-bold">Anti-microbial Disinfection</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-600 text-white flex items-center justify-center text-xs shadow-md shadow-primary-600/30"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-bold">Post-Remediation Verification</span>
+                        </div>
+                    </div>
+                    <a href="register.html" class="btn btn-primary w-full py-5 rounded-2xl animate-pulse-soft">
+                        Start Cleaning Process
+                    </a>
                 </div>
 
-                <!-- Plan 3 -->
+                <!-- Commercial Plan -->
                 <div
-                    class="bg-white dark:bg-secondary-900 rounded-xl shadow-lg border border-secondary-100 dark:border-secondary-800 overflow-hidden transition-all duration-300 p-10 flex flex-col animate-on-scroll">
-                    <h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-secondary-500">Commercial</h3>
-                    <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-4xl font-bold font-heading">Custom</span>
+                    class="group relative p-10 bg-white dark:bg-secondary-900/50 rounded-[2.5rem] border border-secondary-100 dark:border-secondary-800 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col animate-on-scroll backdrop-blur-sm">
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold text-secondary-500 uppercase tracking-widest mb-2">Commercial</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-5xl font-bold font-heading">Custom</span>
+                        </div>
                     </div>
-                    <p class="text-secondary-600 dark:text-secondary-400 mb-8">Industrial and large scale commercial
-                        property solutions.</p>
-                    <ul class="space-y-4 mb-10 flex-1">
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Phase I ESA
-                            Included</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> OSHA
-                            Compliance Support</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Multi-zone
-                            Monitoring</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Enterprise
-                            Project Portal</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-primary-600"></i> Fixed Yearly
-                            Retainers</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary w-full">Contact Sales</a>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-8 leading-relaxed">
+                        Enterprise solutions for industrial estates, offices, and multi-unit complexes.
+                    </p>
+                    <div class="space-y-5 mb-10 flex-1">
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 flex items-center justify-center text-xs"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-medium">Compliance Documentation</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 flex items-center justify-center text-xs"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-medium">OSHA Standards Support</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 flex items-center justify-center text-xs"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-medium">Dedicated Project Manager</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 flex items-center justify-center text-xs"><i
+                                    class="fas fa-check"></i></span>
+                            <span class="font-medium">24/7 Response Retainer</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-secondary w-full py-5 rounded-2xl">
+                        Contact Sales
+                    </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="py-12 border-y border-secondary-100 dark:border-secondary-800">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-sm font-bold secondary-500 uppercase tracking-widest mb-10">Trusted by Local
+                Enterprises</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-40 grayscale">
+                <i class="fab fa-apple text-4xl"></i>
+                <i class="fab fa-google text-4xl"></i>
+                <i class="fab fa-microsoft text-4xl"></i>
+                <i class="fab fa-amazon text-4xl"></i>
+                <i class="fab fa-netflix text-4xl"></i>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-24 bg-secondary-900 text-white">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <h2 class="text-3xl font-heading font-bold mb-16 text-center animate-on-scroll">Frequently Asked Questions
-            </h2>
-            <div class="space-y-6">
-                <div class="animate-on-scroll">
-                    <h4 class="text-xl font-bold mb-2">Can I get a discount for multiple tests?</h4>
-                    <p class="text-secondary-400">Yes, we offer special multi-unit pricing for real-estate professionals
-                        and property managers. Please contact our sales team for a custom quote.</p>
+    <section class="py-24 bg-white dark:bg-secondary-950">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-heading font-bold mb-4">Pricing FAQ</h2>
+                <p class="text-secondary-600 dark:text-secondary-400">Everything you need to know about our service
+                    plans.</p>
+            </div>
+            <div class="space-y-4">
+                <div
+                    class="p-8 rounded-3xl bg-secondary-50 dark:bg-secondary-900/50 border border-secondary-100 dark:border-secondary-800 animate-on-scroll">
+                    <h4 class="text-xl font-bold mb-3 flex items-center gap-3">
+                        <i class="fas fa-circle-question text-primary-600"></i>
+                        Can I get a discount for multiple tests?
+                    </h4>
+                    <p class="text-secondary-600 dark:text-secondary-400 leading-relaxed">
+                        Yes, we offer special multi-unit pricing for real-estate professionals and property managers.
+                        Our volume discounts start for projects requiring more than 5 individual tests or samples.
+                    </p>
                 </div>
-                <div class="animate-on-scroll">
-                    <h4 class="text-xl font-bold mb-2">What is included in the 'Base Price'?</h4>
-                    <p class="text-secondary-400">Base pricing covers the mobilization of the crew and equipment for
-                        areas up to 200 sq. ft. Larger areas are calculated at a fixed rate per square foot.</p>
+                <div
+                    class="p-8 rounded-3xl bg-secondary-50 dark:bg-secondary-900/50 border border-secondary-100 dark:border-secondary-800 animate-on-scroll">
+                    <h4 class="text-xl font-bold mb-3 flex items-center gap-3">
+                        <i class="fas fa-circle-question text-primary-600"></i>
+                        What is included in the 'Base Price'?
+                    </h4>
+                    <p class="text-secondary-600 dark:text-secondary-400 leading-relaxed">
+                        Base pricing covers the mobilization of the crew, heavy-duty equipment setup, and disposal fees
+                        for areas up to 200 sq. ft. For larger properties, we provide a fixed per-square-foot rate.
+                    </p>
+                </div>
+                <div
+                    class="p-8 rounded-3xl bg-secondary-50 dark:bg-secondary-900/50 border border-secondary-100 dark:border-secondary-800 animate-on-scroll">
+                    <h4 class="text-xl font-bold mb-3 flex items-center gap-3">
+                        <i class="fas fa-circle-question text-primary-600"></i>
+                        How long does a Lab Report take?
+                    </h4>
+                    <p class="text-secondary-600 dark:text-secondary-400 leading-relaxed">
+                        Our standard turnaround is 24-48 hours. Expedited reports (8-hour turnaround) are available for
+                        an additional $75 fee per sample, subject to lab availability.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Pricing Toggle Script
+        const pricingToggle = document.getElementById('pricing-toggle');
+        const dot = pricingToggle.querySelector('.dot');
+        let isAnnual = false;
+
+        pricingToggle.addEventListener('click', () => {
+            isAnnual = !isAnnual;
+            if (isAnnual) {
+                dot.style.transform = 'translateX(2rem)';
+                pricingToggle.classList.replace('bg-secondary-200', 'bg-primary-600');
+            } else {
+                dot.style.transform = 'translateX(0)';
+                pricingToggle.classList.replace('bg-primary-600', 'bg-secondary-200');
+            }
+        });
+    </script>
 
     <footer class="bg-secondary-950 text-white pt-20 pb-10">
         <div class="container mx-auto px-4">
