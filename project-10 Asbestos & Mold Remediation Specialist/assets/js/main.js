@@ -1,4 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Active Navigation Highlighting
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+    // Select all navigation links (Desktop and Mobile)
+    const desktopLinks = document.querySelectorAll('.lg\\:flex .navbar-link, .lg\\:flex a');
+    const mobileLinks = document.querySelectorAll('#mobile-menu a, #mobile-menu button');
+
+    const allLinks = [...desktopLinks, ...mobileLinks];
+
+    allLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        const isHome = currentPath === 'index.html' || currentPath === 'home-v2.html' || currentPath === '';
+
+        // Skip buttons
+        if (link.classList.contains('btn')) return;
+
+        let isActive = false;
+
+        if (href === currentPath) {
+            isActive = true;
+        } else if (isHome && (link.id === 'desktop-home-toggle' || link.id === 'mobile-home-toggle')) {
+            isActive = true;
+        } else if (currentPath === 'service-details.html' && href === 'services.html') {
+            isActive = true;
+        }
+
+        if (isActive) {
+            // Apply active styles
+            link.classList.add('text-primary-600');
+            link.classList.add('font-semibold');
+            // Remove opacity-50 from icons in mobile menu
+            link.querySelector('i')?.classList.remove('opacity-50');
+        } else {
+            // Restore default state
+            if (link.classList.contains('navbar-link') || link.id.includes('home-toggle') || link.closest('#mobile-menu')) {
+                link.classList.remove('text-primary-600');
+                if (!link.id.includes('home-toggle')) {
+                    link.classList.remove('font-semibold');
+                }
+                if (link.closest('#mobile-menu')) {
+                    link.querySelector('i')?.classList.add('opacity-50');
+                }
+            }
+        }
+    });
+
+
     // Dark Mode Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
